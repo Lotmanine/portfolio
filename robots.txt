@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: replace with production domain once known.
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://oldev.site/sitemap.xml

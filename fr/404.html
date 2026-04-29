@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page introuvable — OLDEV</title>
+    <meta name="description" content="La page que vous cherchez n'existe pas.">
+    <meta name="robots" content="noindex, follow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 950: '#020617', 925: '#0a0f1e', 900: '#0f172a', 850: '#131b2e', 800: '#1e293b', 700: '#334155', 600: '#475569', 500: '#64748b', 400: '#94a3b8', 300: '#cbd5e1', 200: '#e2e8f0', 100: '#f1f5f9' },
+                        accent: { DEFAULT: '#10b981', light: '#34d399', dark: '#059669', glow: 'rgba(16, 185, 129, 0.15)' },
+                    },
+                    fontFamily: { display: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="grid-bg">
+    <!-- HEADER:START -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-slate-950/70 border-b border-slate-800/50 transition-all duration-300" aria-label="Primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-18">
+            <a href="../" class="flex items-center gap-3 group" aria-label="OLDEV — home">
+                <div class="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <span class="font-mono text-accent font-bold text-sm">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-bold text-lg text-slate-100 tracking-tight">OL<span class="text-accent">DEV</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="../" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">Ingénierie WordPress</a>
+                <a href="../crm-migration-service/" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">Migration CRM</a>
+                <a href="../contact" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">Contact</a>
+                <a href="../free-deliverability-audit/" class="nav-cta ">Audit Gratuit</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/5 border border-accent/20">
+                    <span class="relative flex h-2 w-2">
+                        <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    <span class="text-xs font-mono text-accent font-medium">Disponible</span>
+                </div>
+                <a href="../404" hreflang="en" aria-label="Switch to English" class="lang-switch font-mono text-xs font-medium text-slate-400 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-700/50 hover:border-accent/30">EN</a>
+                <button id="mobile-toggle" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-accent hover:border-accent/30 transition-colors" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/50 bg-slate-950/95">
+        <div class="px-4 py-4 space-y-1">
+            <a href="../" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Ingénierie WordPress</a>
+            <a href="../crm-migration-service/" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Migration CRM</a>
+            <a href="../contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Contact</a>
+            <a href="../free-deliverability-audit/" class="mobile-nav-cta block px-3 py-2.5 rounded-lg text-sm font-display font-semibold transition-colors">Audit Gratuit</a>
+            <div class="pt-2 flex items-center gap-2 px-3 py-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span class="text-xs font-mono text-accent font-medium">Disponible</span>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- HEADER:END -->
+
+    <main id="main-content">
+        <section class="relative pt-32 pb-20 sm:pt-40 sm:pb-28">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                <p class="font-mono text-accent text-xs font-medium tracking-wider uppercase mb-4">404 · Page introuvable</p>
+                <h1 class="font-display font-900 text-5xl sm:text-6xl text-slate-100 leading-[1.05] tracking-tight">
+                    Cette page <span class="text-gradient">n'existe pas</span>
+                </h1>
+                <p class="text-lg text-slate-400 mt-6 max-w-xl mx-auto leading-relaxed">
+                    Le lien est peut-être cassé ou la page a peut-être été déplacée. Essayez plutôt :
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10">
+                    <a href="/fr/" class="btn-primary">
+                        <i class="fa-solid fa-house text-xs" aria-hidden="true"></i>
+                        Retour à l'accueil
+                    </a>
+                    <a href="/fr/free-deliverability-audit/" class="btn-tertiary">
+                        Lancer un audit de délivrabilité gratuit
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER:START -->
+<footer class="border-t border-slate-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <span class="font-mono text-accent font-bold text-xs">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-semibold text-sm text-slate-400">OL<span class="text-accent">DEV</span></span>
+                <span class="hidden md:inline font-mono text-xs text-slate-600">· Ingénieur Systèmes WordPress</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/lotfi-otmanine/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Profil LinkedIn"><i class="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i></a>
+                <a href="https://github.com/Lotmanine" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Profil GitHub"><i class="fa-brands fa-github text-lg" aria-hidden="true"></i></a>
+                <a href="https://www.upwork.com/freelancers/~01bd748fcb665b90ca" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Profil Upwork"><i class="fa-solid fa-arrow-up-right-from-square text-lg" aria-hidden="true"></i></a>
+            </div>
+            <p class="font-mono text-xs text-slate-600">&copy; 2026 OLDEV · Construit avec précision.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Discuter sur WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-float-label">Discuter sur WhatsApp</span>
+</a>
+<!-- FOOTER:END -->
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

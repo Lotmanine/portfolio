@@ -1,9 +1,8 @@
 /* ===== OLDEV Lead Magnet — Email Deliverability Audit Form ===== */
 
-// >>> CONFIG: Paste your n8n webhook URL here once the flow is built <<<
-const N8N_WEBHOOK_URL = 'REPLACE_WITH_N8N_WEBHOOK_URL';
+const N8N_WEBHOOK_URL = 'https://n8n.oldev.site/webhook/audit-request';
+const REQUEST_TIMEOUT_MS = 10_000;
 
-// Domain validation: accepts foo.com, sub.foo.co.uk, etc. (no protocol, no path).
 const DOMAIN_RE = /^(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\.[A-Za-z0-9-]{1,63})+$/;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -63,17 +62,33 @@ function validate(form) {
     return { valid, email, domain };
 }
 
+function classifyError(err, response) {
+    if (err && err.name === 'AbortError') {
+        return 'Request took too long. Please try again.';
+    }
+    if (response) {
+        if (response.status >= 500) {
+            return "Something's broken on our end — try again in a minute.";
+        }
+        if (response.status >= 400) {
+            return 'Please check your email and domain are valid.';
+        }
+    }
+    return "Couldn't reach our server. Check your connection and try again.";
+}
+
 async function submitLeadMagnet(form, source) {
     setFormError(form, '');
 
-    // Honeypot check — if a bot filled the hidden field, silently abort.
-    const honeypot = form.elements['company_website'];
-    if (honeypot && honeypot.value.trim() !== '') {
-        return { aborted: true };
+    // Honeypot — defense-in-depth (n8n also rejects). Silently abort.
+    const honeypotField = form.elements['company_website'];
+    const honeypotValue = honeypotField ? honeypotField.value.trim() : '';
+    if (honeypotValue !== '') {
+        return { aborted: true, reason: 'honeypot' };
     }
 
     const result = validate(form);
-    if (!result.valid) return { aborted: true };
+    if (!result.valid) return { aborted: true, reason: 'validation' };
 
     const name = (form.elements['name']?.value || '').trim();
     const payload = {
@@ -82,6 +97,7 @@ async function submitLeadMagnet(form, source) {
         name: name || undefined,
         source,
         timestamp: new Date().toISOString(),
+        honeypot: honeypotValue,
     };
 
     const submitBtn = form.querySelector('button[type="submit"]');
@@ -89,26 +105,36 @@ async function submitLeadMagnet(form, source) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+    let response = null;
     try {
-        const response = await fetch(N8N_WEBHOOK_URL, {
+        response = await fetch(N8N_WEBHOOK_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
+            signal: controller.signal,
         });
+        clearTimeout(timeoutId);
+
         if (!response.ok) {
-            throw new Error(`Server returned ${response.status}`);
+            const message = classifyError(null, response);
+            setFormError(form, message);
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+            return { ok: false, status: response.status };
         }
+
         showSuccess(form);
         return { ok: true };
     } catch (err) {
-        const isPlaceholder = N8N_WEBHOOK_URL === 'REPLACE_WITH_N8N_WEBHOOK_URL';
-        const message = isPlaceholder
-            ? 'Webhook URL not configured yet. Please contact the site owner directly.'
-            : 'Could not reach the audit service. Please try again or contact us directly.';
+        clearTimeout(timeoutId);
+        const message = classifyError(err, null);
         setFormError(form, message);
         submitBtn.disabled = false;
         submitBtn.textContent = originalLabel;
-        return { ok: false, error: err };
+        return { ok: false, error: err.name || 'NetworkError' };
     }
 }
 
@@ -129,7 +155,6 @@ function initLeadMagnet(form) {
         await submitLeadMagnet(form, source);
     });
 
-    // Live-clear errors as user edits
     ['email', 'domain'].forEach((fieldName) => {
         const input = form.elements[fieldName];
         if (!input) return;

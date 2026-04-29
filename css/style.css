@@ -752,6 +752,21 @@ body::before {
     line-height: 1.5;
     margin-top: 0.4rem;
 }
+.lead-magnet-form .lm-consent {
+    font-size: 0.72rem;
+    color: #475569;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 0.55rem;
+}
+.lead-magnet-form .lm-consent a {
+    color: #94a3b8;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.lead-magnet-form .lm-consent a:hover {
+    color: #10b981;
+}
 .lead-magnet-form .lm-form-error {
     color: #f87171;
     font-size: 0.85rem;

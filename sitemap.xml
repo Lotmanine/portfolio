@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <!-- TODO: replace example.com with the production domain once known. -->
     <url>
-        <loc>https://example.com/index.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/index.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/index.html"/>
+        <loc>https://oldev.site/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/"/>
     </url>
     <url>
-        <loc>https://example.com/crm-migration-service/index.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/crm-migration-service/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/crm-migration-service/index.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/crm-migration-service/index.html"/>
+        <loc>https://oldev.site/crm-migration-service/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/crm-migration-service/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/crm-migration-service/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/crm-migration-service/"/>
     </url>
     <url>
-        <loc>https://example.com/contact.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/contact.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/contact.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/contact.html"/>
+        <loc>https://oldev.site/contact</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/contact"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/contact"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/contact"/>
     </url>
     <url>
-        <loc>https://example.com/free-deliverability-audit/index.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/free-deliverability-audit/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/free-deliverability-audit/index.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/free-deliverability-audit/index.html"/>
+        <loc>https://oldev.site/free-deliverability-audit/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/free-deliverability-audit/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/free-deliverability-audit/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/free-deliverability-audit/"/>
     </url>
     <url>
-        <loc>https://example.com/fr/index.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/index.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/index.html"/>
+        <loc>https://oldev.site/fr/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/"/>
     </url>
     <url>
-        <loc>https://example.com/fr/crm-migration-service/index.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/crm-migration-service/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/crm-migration-service/index.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/crm-migration-service/index.html"/>
+        <loc>https://oldev.site/fr/crm-migration-service/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/crm-migration-service/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/crm-migration-service/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/crm-migration-service/"/>
     </url>
     <url>
-        <loc>https://example.com/fr/contact.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/contact.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/contact.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/contact.html"/>
+        <loc>https://oldev.site/fr/contact</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/contact"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/contact"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/contact"/>
     </url>
     <url>
-        <loc>https://example.com/fr/free-deliverability-audit/index.html</loc>
-        <lastmod>2026-04-28</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/free-deliverability-audit/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/free-deliverability-audit/index.html"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/free-deliverability-audit/index.html"/>
+        <loc>https://oldev.site/fr/free-deliverability-audit/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/free-deliverability-audit/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/free-deliverability-audit/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/free-deliverability-audit/"/>
     </url>
 </urlset>

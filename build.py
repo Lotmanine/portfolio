@@ -38,10 +38,12 @@ PAGES: dict[str, tuple[str, str]] = {
     "crm-migration-service/index.html":            ("crm",     "en"),
     "contact.html":                                ("contact", "en"),
     "free-deliverability-audit/index.html":        ("audit",   "en"),
+    "404.html":                                    ("notfound","en"),
     "fr/index.html":                               ("home",    "fr"),
     "fr/crm-migration-service/index.html":         ("crm",     "fr"),
     "fr/contact.html":                             ("contact", "fr"),
     "fr/free-deliverability-audit/index.html":     ("audit",   "fr"),
+    "fr/404.html":                                 ("notfound","fr"),
 }
 
 # Marker comments delimiting the regions that get replaced on each build.
@@ -76,24 +78,37 @@ def doc_relative_root(page_path: str) -> str:
 
 def alt_locale_href(page_id: str, current_locale: str) -> str:
     """Document-relative href to the same page in the OTHER locale, computed
-    from the current page's filesystem position."""
-    en_paths = {
-        "home":    "index.html",
-        "crm":     "crm-migration-service/index.html",
-        "contact": "contact.html",
-        "audit":   "free-deliverability-audit/index.html",
+    from the current page's filesystem position. Emits clean URLs (no
+    `.html`, no trailing `index.html`)."""
+    # Page-id -> on-disk path (used to compute current page depth)
+    en_disk = {
+        "home":     "index.html",
+        "crm":      "crm-migration-service/index.html",
+        "contact":  "contact.html",
+        "audit":    "free-deliverability-audit/index.html",
+        "notfound": "404.html",
     }
-    target_path = en_paths[page_id]
+    # Page-id -> clean URL relative to language root (no .html, no index.html)
+    en_clean = {
+        "home":     "",
+        "crm":      "crm-migration-service/",
+        "contact":  "contact",
+        "audit":    "free-deliverability-audit/",
+        "notfound": "404",
+    }
+    disk_path = en_disk[page_id]
+    clean_path = en_clean[page_id]
     if current_locale == "en":
-        # current page is at <root>/<target_path>; sibling in fr/ tree
-        depth = target_path.count("/")
-        prefix = "../" * depth
-        return f"{prefix}fr/{target_path}"
+        # current page is at <root>/<disk_path>; alt under fr/
+        depth = disk_path.count("/")
+        prefix = "../" * depth if depth else "./"
+        target = f"fr/{clean_path}" if clean_path else "fr/"
+        return f"{prefix}{target}"
     else:
-        # current page is at <root>/fr/<target_path>; sibling at root
-        depth = target_path.count("/") + 1  # +1 because we're under fr/
+        # current page is at <root>/fr/<disk_path>; alt at root
+        depth = disk_path.count("/") + 1  # +1 because we're under fr/
         prefix = "../" * depth
-        return f"{prefix}{target_path}"
+        return f"{prefix}{clean_path}" if clean_path else prefix
 
 
 # --- Token rendering --------------------------------------------------------
@@ -247,6 +262,32 @@ def main() -> int:
         print("\nPages without HEADER/FOOTER markers (skipped):")
         for p in pages_no_markers:
             print(f"  ! {p}")
+
+    # --- Clean-URL self-check ----------------------------------------------
+    # After build, scan every output HTML for internal href="…html" links
+    # (excluding external URLs, mailto, tel, anchors, asset paths). Warn for
+    # each match — clean URL mode is supposed to drop .html from internal hrefs.
+    INTERNAL_HTML_RE = re.compile(
+        r'href="(?!https?://|mailto:|tel:|#|/?(?:css|js|images)/)([^"]*\.html)(?:#[^"]*)?"',
+        re.IGNORECASE,
+    )
+    clean_url_warnings: list[str] = []
+    for html_path in sorted(SITE_ROOT.rglob("*.html")):
+        rel = html_path.relative_to(SITE_ROOT).as_posix()
+        if rel.startswith("partials/"):
+            continue
+        text = html_path.read_text(encoding="utf-8")
+        for m in INTERNAL_HTML_RE.finditer(text):
+            ref = m.group(1)
+            # Skip the canonical/hreflang region — those are handled separately
+            # by intent (they may use clean URLs but the regex sees the path).
+            clean_url_warnings.append(f"  ! {rel}: internal href to .html → {ref}")
+
+    if clean_url_warnings:
+        print(f"\nClean-URL warnings ({len(clean_url_warnings)}):")
+        for w in clean_url_warnings:
+            print(w)
+        warnings.extend(clean_url_warnings)
 
     if warnings:
         print(f"\nWarnings ({len(warnings)}):")
