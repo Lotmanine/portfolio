@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — OLDEV | WordPress Systems Engineer</title>
+    <meta name="description" content="Get in touch with OLDEV. WhatsApp for instant chat, Google Meet for a 30-minute discovery call, or send a detailed quote request — pick what fits your timeline.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="contact.html">
+    <link rel="alternate" hreflang="en" href="contact.html">
+    <link rel="alternate" hreflang="fr" href="fr/contact.html">
+    <link rel="alternate" hreflang="x-default" href="contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact — OLDEV">
+    <meta property="og:description" content="Pick the channel that fits your timeline: WhatsApp, a 30-min Google Meet, or a structured project brief.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:url" content="contact.html">
+    <meta property="og:image" content="images/og-contact.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact OLDEV">
+    <meta name="twitter:description" content="WhatsApp · Google Meet · structured quote — pick what fits your timeline.">
+    <meta name="twitter:image" content="images/og-contact.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#020617', 925: '#0a0f1e', 900: '#0f172a', 850: '#131b2e',
+                            800: '#1e293b', 700: '#334155', 600: '#475569', 500: '#64748b',
+                            400: '#94a3b8', 300: '#cbd5e1', 200: '#e2e8f0', 100: '#f1f5f9',
+                        },
+                        accent: {
+                            DEFAULT: '#10b981', light: '#34d399', dark: '#059669',
+                            glow: 'rgba(16, 185, 129, 0.15)',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="grid-bg">
+
+    <!-- HEADER:START -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-slate-950/70 border-b border-slate-800/50 transition-all duration-300" aria-label="Primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-18">
+            <a href="./index.html" class="flex items-center gap-3 group" aria-label="OLDEV — home">
+                <div class="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <span class="font-mono text-accent font-bold text-sm">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-bold text-lg text-slate-100 tracking-tight">OL<span class="text-accent">DEV</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="./index.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">WordPress Engineering</a>
+                <a href="./crm-migration-service/index.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">CRM Migration</a>
+                <a href="./contact.html" class="nav-link active text-sm text-slate-400 hover:text-accent transition-colors font-medium">Contact</a>
+                <a href="./free-deliverability-audit/index.html" class="nav-cta ">Free Audit</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/5 border border-accent/20">
+                    <span class="relative flex h-2 w-2">
+                        <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    <span class="text-xs font-mono text-accent font-medium">Available</span>
+                </div>
+                <a href="fr/contact.html" hreflang="fr" aria-label="Switch to French" class="lang-switch font-mono text-xs font-medium text-slate-400 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-700/50 hover:border-accent/30">FR</a>
+                <button id="mobile-toggle" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-accent hover:border-accent/30 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/50 bg-slate-950/95">
+        <div class="px-4 py-4 space-y-1">
+            <a href="./index.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">WordPress Engineering</a>
+            <a href="./crm-migration-service/index.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">CRM Migration</a>
+            <a href="./contact.html" class="mobile-nav-link active block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Contact</a>
+            <a href="./free-deliverability-audit/index.html" class="mobile-nav-cta block px-3 py-2.5 rounded-lg text-sm font-display font-semibold transition-colors">Free Audit</a>
+            <div class="pt-2 flex items-center gap-2 px-3 py-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span class="text-xs font-mono text-accent font-medium">Available</span>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- HEADER:END -->
+
+
+    <main id="main-content">
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="relative pt-32 pb-12 sm:pt-36 sm:pb-16 overflow-hidden">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">Available · Replies within 24h</span><span data-lang="fr">Disponible · Réponse sous 24h</span></span>
+            </div>
+            <h1 class="reveal font-display font-900 text-4xl sm:text-5xl lg:text-6xl text-slate-100 leading-[1.05] tracking-tight" style="transition-delay: 0.1s;">
+                <span data-lang="en">Let's <span class="text-gradient">talk</span>.</span>
+                <span data-lang="fr">On en <span class="text-gradient">parle</span>.</span>
+            </h1>
+            <p class="reveal text-lg sm:text-xl text-slate-400 mt-6 max-w-2xl mx-auto leading-relaxed" style="transition-delay: 0.2s;">
+                <span data-lang="en">Pick the channel that fits your timeline — instant message, a real conversation, or a structured project brief.</span>
+                <span data-lang="fr">Choisissez le canal qui colle à votre échéance — message instantané, vraie conversation, ou brief de projet structuré.</span>
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ===== CONTACT OPTIONS ===== -->
+    <section id="options" class="relative pb-20 sm:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+                <!-- WhatsApp -->
+                <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="reveal contact-card group">
+                    <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div>
+                        <h3><span data-lang="en">Chat instantly on WhatsApp</span><span data-lang="fr">Discuter sur WhatsApp</span></h3>
+                        <p class="mt-2"><span data-lang="en">Quick question, scoping check, or a 5-minute back-and-forth — fastest channel. Typical reply within an hour during work days.</span><span data-lang="fr">Question rapide, cadrage, ou échange de 5 minutes — le canal le plus rapide. Réponse typique sous une heure en jour ouvré.</span></p>
+                    </div>
+                    <span class="contact-cta">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span data-lang="en">Open WhatsApp</span><span data-lang="fr">Ouvrir WhatsApp</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                    </span>
+                </a>
+
+                <!-- Google Meet -->
+                <a href="https://calendar.app.google/ehABHFyz67u8GasJ6" target="_blank" rel="noopener noreferrer" class="reveal contact-card group" style="transition-delay: 0.1s;">
+                    <div class="contact-icon"><i class="fa-solid fa-video"></i></div>
+                    <div>
+                        <h3><span data-lang="en">Book a 30-min discovery call</span><span data-lang="fr">Réserver un RDV de 30 min</span></h3>
+                        <p class="mt-2"><span data-lang="en">A real conversation about your stack, your goals, and whether we're a fit. Zero sales pressure — bring your problem, leave with a direction.</span><span data-lang="fr">Une vraie conversation sur votre stack, vos objectifs, et si on est compatibles. Zéro pression — venez avec un problème, repartez avec une direction.</span></p>
+                    </div>
+                    <span class="contact-cta">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span data-lang="en">Book a Google Meet</span><span data-lang="fr">Réserver un Google Meet</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                    </span>
+                </a>
+
+                <!-- Quote form -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8bSBRHmSHbgyo_nnlhqsJAgUkRwTSyS-QC83OL_RX2-ZR8g/viewform" target="_blank" rel="noopener noreferrer" class="reveal contact-card contact-card-secondary group" style="transition-delay: 0.2s;">
+                    <div class="contact-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                    <div>
+                        <h3><span data-lang="en">Tell me about your project</span><span data-lang="fr">Décrivez votre projet</span></h3>
+                        <p class="mt-2"><span data-lang="en">Detailed brief through a structured form — scope, timeline, budget. Best when you already know what you need and want a written quote in your inbox.</span><span data-lang="fr">Brief détaillé via un formulaire structuré — scope, échéance, budget. Idéal si vous savez ce qu'il vous faut et voulez un devis écrit.</span></p>
+                    </div>
+                    <span class="contact-cta">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span data-lang="en">Open the form</span><span data-lang="fr">Ouvrir le formulaire</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                    </span>
+                </a>
+            </div>
+
+            <div class="reveal text-center mt-10">
+                <a href="free-deliverability-audit/index.html" class="btn-tertiary">
+                    <i class="fa-solid fa-envelope-circle-check text-xs"></i>
+                    Run a free deliverability audit
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <p class="reveal text-center text-slate-500 text-sm mt-8 max-w-2xl mx-auto">
+                <i class="fa-solid fa-shield-halved mr-1 text-accent/70"></i>
+                All channels go directly to me — no assistant, no funnel.
+            </p>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER:START -->
+<footer class="border-t border-slate-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <span class="font-mono text-accent font-bold text-xs">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-semibold text-sm text-slate-400">OL<span class="text-accent">DEV</span></span>
+                <span class="hidden md:inline font-mono text-xs text-slate-600">· WordPress Systems Engineer</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/lotfi-otmanine/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i></a>
+                <a href="https://github.com/Lotmanine" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="GitHub profile"><i class="fa-brands fa-github text-lg" aria-hidden="true"></i></a>
+                <a href="https://www.upwork.com/freelancers/~01bd748fcb665b90ca" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Upwork profile"><i class="fa-solid fa-arrow-up-right-from-square text-lg" aria-hidden="true"></i></a>
+            </div>
+            <p class="font-mono text-xs text-slate-600">&copy; 2026 OLDEV · Built with precision.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-float-label">Chat on WhatsApp</span>
+</a>
+<!-- FOOTER:END -->
+
+    <script src="js/main.js"></script>
+</body>
+</html>

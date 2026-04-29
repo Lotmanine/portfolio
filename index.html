@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLDEV — WordPress Systems Engineer · CRM, Automations, Deliverability</title>
+    <meta name="description" content="Senior WordPress Systems Engineer specializing in mission-critical systems, CRM architecture, email deliverability, and custom development. Regain control of your WordPress infrastructure.">
+    <link rel="canonical" href="index.html">
+    <link rel="alternate" hreflang="en" href="index.html">
+    <link rel="alternate" hreflang="fr" href="fr/index.html">
+    <link rel="alternate" hreflang="x-default" href="index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OLDEV — WordPress Systems Engineer">
+    <meta property="og:description" content="WordPress systems engineering: CRM architecture, automations, email deliverability. Regain control of your stack.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:url" content="index.html">
+    <meta property="og:image" content="images/og-home.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OLDEV — WordPress Systems Engineer">
+    <meta name="twitter:description" content="WordPress systems engineering: CRM, automations, deliverability.">
+    <meta name="twitter:image" content="images/og-home.png">
+    <meta name="robots" content="index, follow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                            925: '#0a0f1e',
+                            900: '#0f172a',
+                            850: '#131b2e',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            100: '#f1f5f9',
+                        },
+                        accent: {
+                            DEFAULT: '#10b981',
+                            light: '#34d399',
+                            dark: '#059669',
+                            glow: 'rgba(16, 185, 129, 0.15)',
+                        },
+
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="grid-bg">
+
+    <!-- HEADER:START -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-slate-950/70 border-b border-slate-800/50 transition-all duration-300" aria-label="Primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-18">
+            <a href="./index.html" class="flex items-center gap-3 group" aria-label="OLDEV — home">
+                <div class="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <span class="font-mono text-accent font-bold text-sm">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-bold text-lg text-slate-100 tracking-tight">OL<span class="text-accent">DEV</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="./index.html" class="nav-link active text-sm text-slate-400 hover:text-accent transition-colors font-medium">WordPress Engineering</a>
+                <a href="./crm-migration-service/index.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">CRM Migration</a>
+                <a href="./contact.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">Contact</a>
+                <a href="./free-deliverability-audit/index.html" class="nav-cta ">Free Audit</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/5 border border-accent/20">
+                    <span class="relative flex h-2 w-2">
+                        <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    <span class="text-xs font-mono text-accent font-medium">Available</span>
+                </div>
+                <a href="fr/index.html" hreflang="fr" aria-label="Switch to French" class="lang-switch font-mono text-xs font-medium text-slate-400 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-700/50 hover:border-accent/30">FR</a>
+                <button id="mobile-toggle" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-accent hover:border-accent/30 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/50 bg-slate-950/95">
+        <div class="px-4 py-4 space-y-1">
+            <a href="./index.html" class="mobile-nav-link active block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">WordPress Engineering</a>
+            <a href="./crm-migration-service/index.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">CRM Migration</a>
+            <a href="./contact.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Contact</a>
+            <a href="./free-deliverability-audit/index.html" class="mobile-nav-cta block px-3 py-2.5 rounded-lg text-sm font-display font-semibold transition-colors">Free Audit</a>
+            <div class="pt-2 flex items-center gap-2 px-3 py-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span class="text-xs font-mono text-accent font-medium">Available</span>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- HEADER:END -->
+
+
+    <main id="main-content">
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60">
+                        <span class="font-mono text-accent text-xs">$</span>
+                        <span class="font-mono text-slate-300 text-xs">
+                            <span data-lang="en">wordpress-engineer <span class="text-accent">--status</span> active</span>
+                            <span data-lang="fr">ingénieur-wordpress <span class="text-accent">--statut</span> actif</span>
+                        </span>
+                        <span class="w-2 h-4 bg-accent/80 cursor-blink"></span>
+                    </div>
+                    <div class="reveal space-y-4" style="transition-delay: 0.1s;">
+                        <h1 class="font-display font-900 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight">
+                            <span class="text-slate-100">WordPress</span><br>
+                            <span class="text-gradient">Systems Engineer</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-slate-400 font-light max-w-xl leading-relaxed">
+                            <span data-lang="en">CRM Architecture · Automations · Email Deliverability</span>
+                            <span data-lang="fr">Architecture CRM · Automatisations · Délivrabilité Email</span>
+                        </p>
+                    </div>
+                    <div class="reveal" style="transition-delay: 0.2s;">
+                        <p data-lang="en" class="text-slate-400 text-base sm:text-lg max-w-lg leading-relaxed">
+                            Your WordPress site isn't just a website — it's a <span class="text-slate-200 font-medium">business-critical system</span>. I help agencies, companies, startups, and individuals <span class="text-accent font-medium">regain control</span>, achieve <span class="text-accent font-medium">stability</span>, and build infrastructure that runs <span class="text-accent font-medium">mission-critical operations</span> without breaking.
+                        </p>
+                        <p data-lang="fr" class="text-slate-400 text-base sm:text-lg max-w-lg leading-relaxed">
+                            Votre site WordPress n'est pas qu'un site — c'est un <span class="text-slate-200 font-medium">système critique</span>. J'aide les agences, entreprises, startups et particuliers à <span class="text-accent font-medium">reprendre le contrôle</span>, atteindre la <span class="text-accent font-medium">stabilité</span>, et construire une infrastructure qui gère des <span class="text-accent font-medium">opérations critiques</span> sans faillir.
+                        </p>
+                    </div>
+                    <div class="reveal flex flex-wrap items-center gap-4" style="transition-delay: 0.3s;">
+                        <a href="https://calendar.app.google/ehABHFyz67u8GasJ6" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-accent hover:bg-accent-light text-slate-950 font-display font-semibold text-sm transition-all hover:shadow-lg hover:shadow-accent/20">
+                            <i class="fa-solid fa-magnifying-glass-chart text-xs"></i>
+                            <span data-lang="en">Book My System Audit</span><span data-lang="fr">Réserver Mon Audit Système</span>
+                        </a>
+                        <a href="#expertise" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-slate-700 hover:border-accent/40 text-slate-300 hover:text-accent font-display font-medium text-sm transition-all">
+                            <span data-lang="en">View Services</span><span data-lang="fr">Voir les Services</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                    </div>
+                    <div class="reveal flex flex-wrap items-center gap-6 sm:gap-10 pt-4" style="transition-delay: 0.4s;">
+                        <div>
+                            <div class="font-display font-bold text-2xl text-slate-100">7+</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5"><span data-lang="en">Years Experience</span><span data-lang="fr">Ans d'Expérience</span></div>
+                        </div>
+                        <div class="w-px h-10 bg-slate-800"></div>
+                        <div>
+                            <div class="font-display font-bold text-2xl text-slate-100">$20<span class="text-slate-500 text-lg">/hr</span></div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5"><span data-lang="en">Starting Rate</span><span data-lang="fr">Tarif de Départ</span></div>
+                        </div>
+                        <div class="w-px h-10 bg-slate-800"></div>
+                        <div>
+                            <div class="font-display font-bold text-2xl text-slate-100">100%</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5"><span data-lang="en">Systems Focused</span><span data-lang="fr">Focus Systèmes</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 reveal" style="transition-delay: 0.3s;">
+                    <div class="relative">
+                        <div class="bento-card rounded-2xl p-6 font-mono text-sm space-y-3 overflow-hidden">
+                            <div class="flex items-center gap-2 pb-3 border-b border-slate-700/50">
+                                <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
+                                <span class="text-slate-500 text-xs ml-2">system-audit.sh</span>
+                            </div>
+                            <div class="space-y-1.5 text-xs sm:text-sm">
+                                <p><span class="text-accent">$</span> <span class="text-slate-300">oldev-audit</span> <span class="text-accent-light">--deep-scan</span></p>
+                                <p class="text-slate-500">→ Scanning core integrity...</p>
+                                <p class="text-slate-500">→ Checking plugin conflicts...</p>
+                                <p class="text-slate-500">→ Analyzing CRM pipelines...</p>
+                                <p class="text-slate-500">→ Verifying email auth (SPF/DKIM/DMARC)...</p>
+                                <p class="text-slate-500">→ Reviewing n8n automation workflows...</p>
+                                <p class="text-slate-500">→ Testing API integrations...</p>
+                                <p class="text-slate-500">→ Auditing security & performance...</p>
+                                <p class="pt-2"><span class="text-accent">✓</span> <span class="text-accent">Audit complete.</span> <span class="text-slate-400">12 issues found.</span></p>
+                                <p><span class="text-accent">✓</span> <span class="text-slate-300">Report generated →</span> <span class="text-accent-light underline">audit-report.pdf</span></p>
+                                <p class="pt-1"><span class="text-accent">$</span> <span class="w-2 h-4 inline-block bg-accent/80 cursor-blink"></span></p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 px-3 py-1.5 rounded-lg bg-accent text-slate-950 font-mono text-xs font-bold shadow-lg shadow-accent/20">SYS_OK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== ABOUT ME ===== -->
+    <section id="about" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-4 reveal flex justify-center lg:justify-start">
+                    <div class="about-image-wrapper rounded-2xl w-full max-w-sm">
+                        <!-- REPLACE: Update this src with your hosted image URL for production -->
+                        <img
+                            src="images/e6c430fd-59b2-43b4-8e5d-6ded867c8cdb.jfif"
+                            alt="Lotfi — WordPress Systems Engineer at OLDEV"
+                            class="rounded-2xl w-full h-auto object-cover aspect-[5/6]"
+                        >
+                    </div>
+                </div>
+                <div class="lg:col-span-8 reveal" style="transition-delay: 0.1s;">
+                    <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase">
+                        <span data-lang="en">About Me</span><span data-lang="fr">À Propos</span>
+                    </span>
+                    <div data-lang="en">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight leading-tight">
+                            I'm Lotfi — the engineer<br><span class="text-gradient">behind your systems.</span>
+                        </h2>
+                        <div class="space-y-4 mt-6 text-slate-400 leading-relaxed">
+                            <p>With <span class="text-slate-200 font-medium">7+ years</span> of hands-on experience, I specialize in turning chaotic WordPress environments into <span class="text-accent font-medium">stable, automated business systems</span>. I'm not a page-builder freelancer — I'm a systems engineer who works at the infrastructure level.</p>
+                            <p>Through <span class="text-slate-200 font-medium">OLDEV</span>, I work with <span class="text-accent font-medium">agencies, companies, startups, and individuals</span> — with B2B agencies and companies being my primary clients. Whether you need CRM pipelines, automation workflows, email deliverability, or a full platform built from scratch, I bring the engineering mindset your project deserves.</p>
+                            <p>My approach is methodical: deep diagnosis first, then clean, documented solutions built to last. Every system I touch gets stronger, faster, and more reliable.</p>
+                        </div>
+                    </div>
+                    <div data-lang="fr">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight leading-tight">
+                            Je suis Lotfi — l'ingénieur<br><span class="text-gradient">derrière vos systèmes.</span>
+                        </h2>
+                        <div class="space-y-4 mt-6 text-slate-400 leading-relaxed">
+                            <p>Avec <span class="text-slate-200 font-medium">7+ ans</span> d'expérience, je me spécialise dans la transformation d'environnements WordPress chaotiques en <span class="text-accent font-medium">systèmes métier stables et automatisés</span>. Je ne suis pas un freelance page-builder — je suis un ingénieur systèmes qui intervient au niveau de l'infrastructure.</p>
+                            <p>Via <span class="text-slate-200 font-medium">OLDEV</span>, je travaille avec des <span class="text-accent font-medium">agences, entreprises, startups et particuliers</span> — les agences B2B et entreprises étant mes clients principaux. Que vous ayez besoin de pipelines CRM, de workflows d'automatisation, de délivrabilité email, ou d'une plateforme complète, j'apporte la rigueur d'ingénierie que votre projet mérite.</p>
+                            <p>Mon approche est méthodique : diagnostic approfondi d'abord, puis des solutions propres, documentées et durables. Chaque système que je touche devient plus solide, plus rapide et plus fiable.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-8">
+                        <span class="px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-mono font-medium">WordPress Core</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-mono font-medium">CRM Systems</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-mono font-medium">n8n / Make</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-mono font-medium">Email Auth</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-mono font-medium">WooCommerce</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-mono font-medium">Shopify</span>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-4 mt-8">
+                        <a href="https://www.upwork.com/freelancers/~01bd748fcb665b90ca" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-700/50 text-slate-400 hover:text-accent hover:border-accent/30 transition-all text-sm font-medium">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Upwork
+                        </a>
+                        <a href="https://github.com/Lotmanine" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-700/50 text-slate-400 hover:text-accent hover:border-accent/30 transition-all text-sm font-medium">
+                            <i class="fa-brands fa-github text-sm"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/lotfi-otmanine/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-700/50 text-slate-400 hover:text-accent hover:border-accent/30 transition-all text-sm font-medium">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PROBLEM / SOLUTION + DELIVERY PROMISES ===== -->
+    <section class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <!-- Left: Problem -->
+                <div class="reveal space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/20">
+                        <i class="fa-solid fa-triangle-exclamation text-red-400 text-xs"></i>
+                        <span class="font-mono text-red-400 text-xs font-medium"><span data-lang="en">The Problem</span><span data-lang="fr">Le Problème</span></span>
+                    </div>
+                    <div data-lang="en">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Your WordPress isn't a website.<br><span class="text-slate-500">It's a business system.</span></h2>
+                        <div class="space-y-4 mt-6 text-slate-400 leading-relaxed">
+                            <p>Most agencies treat WordPress like a brochure. But your reality is different: you've got <span class="text-slate-200">CRM pipelines feeding sales</span>, <span class="text-slate-200">automation workflows driving operations</span>, and <span class="text-slate-200">email systems handling revenue-critical communications</span>.</p>
+                            <p>When something breaks, it doesn't just look bad — it <span class="text-red-400">costs money</span>, <span class="text-red-400">loses leads</span>, and <span class="text-red-400">erodes trust</span>.</p>
+                        </div>
+                    </div>
+                    <div data-lang="fr">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Votre WordPress n'est pas un site web.<br><span class="text-slate-500">C'est un système métier.</span></h2>
+                        <div class="space-y-4 mt-6 text-slate-400 leading-relaxed">
+                            <p>La plupart des agences traitent WordPress comme une brochure. Mais votre réalité est différente : des <span class="text-slate-200">pipelines CRM qui alimentent les ventes</span>, des <span class="text-slate-200">workflows d'automatisation pilotant les opérations</span>, et des <span class="text-slate-200">systèmes email gérant des communications critiques</span>.</p>
+                            <p>Quand quelque chose casse, ça ne fait pas que mal paraître — ça <span class="text-red-400">coûte de l'argent</span>, <span class="text-red-400">perd des leads</span>, et <span class="text-red-400">érode la confiance</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Solution + Delivery Promises -->
+                <div class="reveal space-y-6" style="transition-delay: 0.15s;">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20">
+                        <i class="fa-solid fa-shield-halved text-accent text-xs"></i>
+                        <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">What I Deliver</span><span data-lang="fr">Ce Que Je Délivre</span></span>
+                    </div>
+                    <div data-lang="en">
+                        <h3 class="font-display font-700 text-2xl sm:text-3xl text-slate-100 leading-tight">WordPress as a Dependable Business System, Not Just a Website.</h3>
+                    </div>
+                    <div data-lang="fr">
+                        <h3 class="font-display font-700 text-2xl sm:text-3xl text-slate-100 leading-tight">WordPress comme Système Métier Fiable, Pas Juste un Site Web.</h3>
+                    </div>
+
+                    <!-- Delivery promises -->
+                    <div class="space-y-3">
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-envelope-circle-check text-accent text-sm promise-icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm">
+                                    <span data-lang="en">Dramatically Improve Email Deliverability</span><span data-lang="fr">Améliorer Radicalement la Délivrabilité Email</span>
+                                </h4>
+                                <p class="text-slate-500 text-xs mt-0.5">
+                                    <span data-lang="en">SPF, DKIM, DMARC, sender reputation — so your emails actually reach the inbox. This is just one example of dozens of improvements.</span>
+                                    <span data-lang="fr">SPF, DKIM, DMARC, réputation d'expéditeur — pour que vos emails arrivent vraiment en boîte de réception. Ce n'est qu'un exemple parmi des dizaines d'améliorations.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-shield-halved text-accent text-sm promise-icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm">
+                                    <span data-lang="en">Uncover Hidden Vulnerabilities</span><span data-lang="fr">Révéler les Vulnérabilités Cachées</span>
+                                </h4>
+                                <p class="text-slate-500 text-xs mt-0.5">
+                                    <span data-lang="en">Security gaps, broken integrations, silent failures — problems you didn't even know existed. I find and fix them before they cost you.</span>
+                                    <span data-lang="fr">Failles de sécurité, intégrations cassées, défaillances silencieuses — des problèmes dont vous ignoriez l'existence. Je les trouve et les corrige avant qu'ils ne vous coûtent.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-gauge-high text-accent text-sm promise-icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm">
+                                    <span data-lang="en">Measurable Speed & Performance Gains</span><span data-lang="fr">Gains de Vitesse & Performance Mesurables</span>
+                                </h4>
+                                <p class="text-slate-500 text-xs mt-0.5">
+                                    <span data-lang="en">Database optimization, caching, code cleanup, and more — the kind of deep work that makes your system noticeably faster.</span>
+                                    <span data-lang="fr">Optimisation base de données, cache, nettoyage de code, et bien plus — le travail en profondeur qui rend votre système visiblement plus rapide.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-robot text-accent text-sm promise-icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm">
+                                    <span data-lang="en">Automations That Save Hours Every Week</span><span data-lang="fr">Des Automatisations Qui Vous Font Gagner des Heures</span>
+                                </h4>
+                                <p class="text-slate-500 text-xs mt-0.5">
+                                    <span data-lang="en">AI agents, lead routing, automated reporting, data sync — and much more. Every manual process is a candidate for automation.</span>
+                                    <span data-lang="fr">Agents IA, routage de leads, rapports automatisés, synchronisation — et bien plus. Chaque processus manuel est un candidat à l'automatisation.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-file-lines text-accent text-sm promise-icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm">
+                                    <span data-lang="en">Full Documentation & Knowledge Transfer</span><span data-lang="fr">Documentation Complète & Transfert de Connaissances</span>
+                                </h4>
+                                <p class="text-slate-500 text-xs mt-0.5">
+                                    <span data-lang="en">Every project comes with documentation so your team stays in control. No vendor lock-in, no black boxes.</span>
+                                    <span data-lang="fr">Chaque projet est livré avec une documentation pour que votre équipe garde le contrôle. Pas de dépendance, pas de boîtes noires.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 text-xs font-mono italic pt-2">
+                        <span data-lang="en">These are just examples — every project reveals unique opportunities for improvement.</span>
+                        <span data-lang="fr">Ce ne sont que des exemples — chaque projet révèle des opportunités d'amélioration uniques.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== CORE EXPERTISE + PORTFOLIO GALLERY ===== -->
+    <section id="expertise" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">Core Expertise</span><span data-lang="fr">Expertise Principale</span></span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">What I Engineer</span><span data-lang="fr">Ce Que J'Ingénie</span></h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+                    <span data-lang="en">Deep, focused expertise in the systems that power your business infrastructure.</span>
+                    <span data-lang="fr">Une expertise profonde et ciblée dans les systèmes qui alimentent votre infrastructure métier.</span>
+                </p>
+            </div>
+
+            <!-- 6 expertise cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-stethoscope text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Technical Audits</span><span data-lang="fr">Audits Techniques</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Deep infrastructure analysis. I map every plugin interaction, database bottleneck, and security vulnerability to deliver an actionable recovery plan.</span><span data-lang="fr">Analyse approfondie. Je cartographie chaque interaction de plugin, goulot de base de données et vulnérabilité pour livrer un plan d'action concret.</span></p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Performance</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Security</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Stability</span>
+                    </div>
+                </div>
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.08s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-diagram-project text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">CRM Architecture</span><span data-lang="fr">Architecture CRM</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Design and implement CRM systems that serve your sales process. FluentCRM, ActiveCampaign, HubSpot, and Klaviyo integrations built for scale.</span><span data-lang="fr">Concevoir et implémenter des systèmes CRM qui servent votre processus de vente. FluentCRM, ActiveCampaign, HubSpot et Klaviyo conçus pour évoluer.</span></p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">FluentCRM</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Klaviyo</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Pipelines</span>
+                    </div>
+                </div>
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.16s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-envelope-circle-check text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Email Deliverability</span><span data-lang="fr">Délivrabilité Email</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Stop landing in spam. SPF, DKIM, DMARC configuration, sender reputation recovery, and transactional email optimization for reliable inbox placement.</span><span data-lang="fr">Arrêtez d'atterrir dans les spams. Configuration SPF, DKIM, DMARC, récupération de réputation et optimisation des emails transactionnels.</span></p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">SPF/DKIM</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">DMARC</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">SMTP</span>
+                    </div>
+                </div>
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.24s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-robot text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Automations & AI Agents</span><span data-lang="fr">Automatisations & Agents IA</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Powerful n8n and Make.com workflows — AI agents, round-robin lead routing, automated onboarding, Telegram bots, data sync, and multi-platform orchestration.</span><span data-lang="fr">Workflows n8n et Make.com puissants — agents IA, routage round-robin, onboarding automatisé, bots Telegram, synchronisation et orchestration multi-plateforme.</span></p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">n8n</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Make.com</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">AI Agents</span>
+                    </div>
+                </div>
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.32s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-layer-group text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Full System Builds</span><span data-lang="fr">Construction Système Complète</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Build your entire platform from scratch — landing pages, dashboards, CRM, emailing, automations, SEO, security hardening, and speed optimization. One engineer, one cohesive system.</span><span data-lang="fr">Construction de votre plateforme de zéro — landing pages, tableaux de bord, CRM, emailing, automatisations, SEO, sécurisation et optimisation. Un ingénieur, un système cohérent.</span></p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">End-to-End</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">SEO</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Security</span>
+                    </div>
+                </div>
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.40s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-code text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Custom Development</span><span data-lang="fr">Développement Sur Mesure</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Bespoke plugins, theme modifications, API integrations, and WooCommerce/Shopify customizations. Clean, documented code that follows platform standards.</span><span data-lang="fr">Plugins sur mesure, modifications de thèmes, intégrations API et personnalisations WooCommerce/Shopify. Code propre et documenté suivant les standards.</span></p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Plugins</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">REST API</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-slate-400 text-xs font-mono">Woo / Shopify</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PORTFOLIO GALLERY — HIDDEN FOR NOW (uncomment to display) =====
+            <div class="mt-20">
+                <div class="reveal text-center mb-10">
+                    <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">See It In Action</span><span data-lang="fr">Voir En Action</span></span>
+                    <h3 class="font-display font-700 text-2xl sm:text-3xl text-slate-100 mt-2 tracking-tight"><span data-lang="en">Real Systems I've Built</span><span data-lang="fr">Des Systèmes Réels Que J'ai Construits</span></h3>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                    <div class="reveal gallery-item bento-card rounded-2xl overflow-hidden border border-slate-700/40">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img src="images/automation-workflow.jpg" alt="n8n automation workflow example — lead routing and AI agent" class="w-full h-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex items-end p-4">
+                                <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">Automation Workflow</span><span data-lang="fr">Workflow d'Automatisation</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal gallery-item bento-card rounded-2xl overflow-hidden border border-slate-700/40" style="transition-delay: 0.08s;">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img src="images/landing-page.jpg" alt="Custom landing page design for client" class="w-full h-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex items-end p-4">
+                                <span class="font-mono text-accent text-xs font-medium">Landing Page</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal gallery-item bento-card rounded-2xl overflow-hidden border border-slate-700/40" style="transition-delay: 0.16s;">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img src="images/dashboard.jpg" alt="Custom WordPress dashboard for client management" class="w-full h-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex items-end p-4">
+                                <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">Dashboard</span><span data-lang="fr">Tableau de Bord</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal gallery-item bento-card rounded-2xl overflow-hidden border border-slate-700/40" style="transition-delay: 0.24s;">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img src="images/system-flowchart.jpg" alt="CRM pipeline flowchart and system architecture" class="w-full h-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex items-end p-4">
+                                <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">System Flowchart</span><span data-lang="fr">Organigramme Système</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal gallery-item bento-card rounded-2xl overflow-hidden border border-slate-700/40" style="transition-delay: 0.32s;">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img src="images/crm-setup.jpg" alt="FluentCRM pipeline and automation setup" class="w-full h-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex items-end p-4">
+                                <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">CRM Setup</span><span data-lang="fr">Configuration CRM</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal gallery-item bento-card rounded-2xl overflow-hidden border border-slate-700/40" style="transition-delay: 0.40s;">
+                        <div class="relative aspect-[16/10] overflow-hidden">
+                            <img src="images/email-auth-config.jpg" alt="SPF DKIM DMARC email authentication configuration" class="w-full h-full object-cover">
+                            <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex items-end p-4">
+                                <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">Email Auth Config</span><span data-lang="fr">Config Auth Email</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ===== END PORTFOLIO GALLERY ===== -->
+        </div>
+    </section>
+
+
+    <!-- ===== ENGAGEMENTS ===== -->
+    <section id="engagements" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">Engagements</span><span data-lang="fr">Types de Missions</span></span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">How We Work Together</span><span data-lang="fr">Comment On Travaille Ensemble</span></h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed"><span data-lang="en">Structured engagements designed for maximum impact and predictable outcomes.</span><span data-lang="fr">Des missions structurées pour un impact maximum et des résultats prévisibles.</span></p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                <!-- Featured: System Audit -->
+                <div class="reveal lg:col-span-2 bento-card card-glow rounded-2xl p-7 sm:p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                    <div class="relative space-y-5">
+                        <div class="flex items-center justify-between flex-wrap gap-3">
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20">
+                                <i class="fa-solid fa-star text-accent text-xs"></i>
+                                <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">Most Popular</span><span data-lang="fr">Le Plus Populaire</span></span>
+                            </div>
+                            <span class="font-mono text-slate-500 text-sm"><span data-lang="en">Fixed Price</span><span data-lang="fr">Prix Fixe</span></span>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-slate-100"><span data-lang="en">WordPress Systems Audit</span><span data-lang="fr">Audit Système WordPress</span></h3>
+                        <p class="text-slate-400 leading-relaxed max-w-xl"><span data-lang="en">A comprehensive 48-hour deep dive into your entire WordPress ecosystem. Detailed report covering infrastructure health, security, performance, CRM integrity, email deliverability, and a prioritized action plan.</span><span data-lang="fr">Un diagnostic approfondi de 48h de tout votre écosystème WordPress. Rapport détaillé couvrant infrastructure, sécurité, performances, CRM, email, et un plan d'action priorisé.</span></p>
+                        <div class="grid sm:grid-cols-2 gap-3 pt-2">
+                            <div class="flex items-center gap-2.5 text-sm text-slate-300"><i class="fa-solid fa-check text-accent text-xs w-4"></i><span data-lang="en">Full infrastructure mapping</span><span data-lang="fr">Cartographie complète</span></div>
+                            <div class="flex items-center gap-2.5 text-sm text-slate-300"><i class="fa-solid fa-check text-accent text-xs w-4"></i><span data-lang="en">Security vulnerability scan</span><span data-lang="fr">Scan de vulnérabilités</span></div>
+                            <div class="flex items-center gap-2.5 text-sm text-slate-300"><i class="fa-solid fa-check text-accent text-xs w-4"></i><span data-lang="en">CRM & automation review</span><span data-lang="fr">Revue CRM & automations</span></div>
+                            <div class="flex items-center gap-2.5 text-sm text-slate-300"><i class="fa-solid fa-check text-accent text-xs w-4"></i><span data-lang="en">Email auth check</span><span data-lang="fr">Vérification auth email</span></div>
+                            <div class="flex items-center gap-2.5 text-sm text-slate-300"><i class="fa-solid fa-check text-accent text-xs w-4"></i><span data-lang="en">Performance benchmarking</span><span data-lang="fr">Benchmark performances</span></div>
+                            <div class="flex items-center gap-2.5 text-sm text-slate-300"><i class="fa-solid fa-check text-accent text-xs w-4"></i><span data-lang="en">Prioritized action plan</span><span data-lang="fr">Plan d'action priorisé</span></div>
+                        </div>
+                        <a href="https://calendar.app.google/ehABHFyz67u8GasJ6" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent hover:bg-accent-light text-slate-950 font-display font-semibold text-sm transition-all mt-2">
+                            <i class="fa-solid fa-calendar-check text-xs"></i>
+                            <span data-lang="en">Book Audit Meeting</span><span data-lang="fr">Réserver un RDV Audit</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Bug Fix -->
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.08s;">
+                    <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center"><i class="fa-solid fa-bug text-red-400"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Emergency Bug Fixes</span><span data-lang="fr">Corrections d'Urgence</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Site down? Critical error? Plugin conflict crashing checkout? Fast, methodical triage to get your system back online.</span><span data-lang="fr">Site en panne ? Erreur critique ? Conflit de plugin ? Triage rapide et méthodique pour remettre votre système en ligne.</span></p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40"><span class="font-mono text-xs text-slate-500">Turnaround:</span><span class="font-mono text-xs text-slate-300 ml-1">24-48h</span></div>
+                </div>
+                <!-- CRM Migration -->
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.12s;">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-right-left text-accent"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">CRM Migrations</span><span data-lang="fr">Migrations CRM</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Migrate between CRM platforms without losing contacts, tags, automations, or revenue. Data integrity guaranteed with rollback plans.</span><span data-lang="fr">Migration entre plateformes CRM sans perte de contacts, tags ou automatisations. Intégrité garantie avec plans de rollback.</span></p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40"><span class="font-mono text-xs text-slate-500">Scope:</span><span class="font-mono text-xs text-slate-300 ml-1"><span data-lang="en">Fixed-price per migration</span><span data-lang="fr">Prix fixe par migration</span></span></div>
+                </div>
+                <!-- Automation -->
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.16s;">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-gears text-accent"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Automation Workflows</span><span data-lang="fr">Workflows d'Automatisation</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">Connect your stack with Make.com or n8n. AI agents, automated onboarding, lead routing, notifications, and cross-platform data sync.</span><span data-lang="fr">Connectez votre stack avec Make.com ou n8n. Agents IA, onboarding automatisé, routage de leads et synchronisation cross-plateforme.</span></p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40"><span class="font-mono text-xs text-slate-500">Tools:</span><span class="font-mono text-xs text-slate-300 ml-1">Make.com, n8n, Zapier</span></div>
+                </div>
+                <!-- Full Platform -->
+                <div class="reveal bento-card card-glow rounded-2xl p-6 sm:p-7 space-y-5" style="transition-delay: 0.2s;">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center"><i class="fa-solid fa-rocket text-accent"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-100 mb-2"><span data-lang="en">Full Platform Build</span><span data-lang="fr">Construction de Plateforme</span></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"><span data-lang="en">End-to-end platform creation: landing pages, dashboards, CRM, email, automations, SEO, security, and speed optimization — all from scratch.</span><span data-lang="fr">Création de plateforme de A à Z : landing pages, tableaux de bord, CRM, email, automatisations, SEO, sécurité et optimisation.</span></p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-700/40"><span class="font-mono text-xs text-slate-500"><span data-lang="en">Scope:</span><span data-lang="fr">Portée :</span></span><span class="font-mono text-xs text-slate-300 ml-1"><span data-lang="en">Custom quote</span><span data-lang="fr">Devis sur mesure</span></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== TECH STACK ===== -->
+    <section id="stack" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase">Tech Stack</span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">Tools I Work With</span><span data-lang="fr">Outils Que J'Utilise</span></h2>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default">
+                    <i class="fa-brands fa-wordpress tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">WordPress</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Core Platform</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.03s">
+                    <i class="fa-brands fa-php tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">PHP</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Backend</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.06s">
+                    <i class="fa-brands fa-js tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">JavaScript</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Frontend / Backend</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.09s">
+                    <i class="fa-brands fa-css3-alt tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">HTML / CSS</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Tailwind CSS</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.12s">
+                    <i class="fa-solid fa-bolt tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">FluentCRM</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">CRM</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.15s">
+                    <i class="fa-solid fa-envelope tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">ActiveCampaign</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Email & CRM</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.18s">
+                    <i class="fa-solid fa-chart-line tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">Klaviyo</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Email & SMS</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.21s">
+                    <i class="fa-solid fa-circle-nodes tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">Make.com</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Automation</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.24s">
+                    <i class="fa-solid fa-sitemap tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">n8n</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Automation</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.27s">
+                    <i class="fa-solid fa-cart-shopping tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">WooCommerce</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">eCommerce</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.30s">
+                    <i class="fa-brands fa-shopify tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">Shopify</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">eCommerce</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.33s">
+                    <i class="fa-brands fa-hubspot tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">HubSpot</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">CRM</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.36s">
+                    <i class="fa-solid fa-graduation-cap tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">Kajabi</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Course Platform</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.39s">
+                    <i class="fa-solid fa-shield-halved tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">DNS / DMARC</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Email Auth</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.42s">
+                    <i class="fa-solid fa-server tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">cPanel</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Hosting</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.45s">
+                    <i class="fa-solid fa-plug tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">REST APIs</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Integrations</div></div>
+                </div>
+                <div class="reveal tech-item bento-card rounded-xl p-4 sm:p-5 flex flex-col items-center gap-2.5 text-center cursor-default" style="transition-delay:.48s">
+                    <i class="fa-solid fa-database tech-icon text-2xl text-slate-400"></i>
+                    <div><div class="font-display font-semibold text-sm text-slate-200">MySQL</div><div class="font-mono text-[10px] text-slate-500 mt-0.5">Database</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== CONTACT / CTA ===== -->
+    <section id="contact" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal relative bento-card rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden text-center">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
+                </div>
+                <div class="relative space-y-8 max-w-2xl mx-auto">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
+                        <span class="relative flex h-2 w-2">
+                            <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                        </span>
+                        <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">Currently accepting new projects</span><span data-lang="fr">Actuellement ouvert aux nouveaux projets</span></span>
+                    </div>
+                    <div data-lang="en">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Let's Build Something<br><span class="text-gradient">That Actually Works</span></h2>
+                    </div>
+                    <div data-lang="fr">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Construisons Quelque Chose<br><span class="text-gradient">Qui Fonctionne Vraiment</span></h2>
+                    </div>
+                    <p class="text-slate-400 text-lg leading-relaxed">
+                        <span data-lang="en">Whether you need a systems audit, a full platform from scratch, or any other technical challenge — book a free meeting or request a custom quote. I'm here to help.</span>
+                        <span data-lang="fr">Que vous ayez besoin d'un audit système, d'une plateforme complète, ou de résoudre tout autre défi technique — réservez un rendez-vous gratuit ou demandez un devis sur mesure.</span>
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 pt-2">
+                        <a href="https://calendar.app.google/ehABHFyz67u8GasJ6" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-accent hover:bg-accent-light text-slate-950 font-display font-bold text-base transition-all hover:shadow-lg hover:shadow-accent/20">
+                            <i class="fa-solid fa-video text-sm"></i>
+                            <span data-lang="en">Book a Meeting</span><span data-lang="fr">Réserver un RDV</span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8bSBRHmSHbgyo_nnlhqsJAgUkRwTSyS-QC83OL_RX2-ZR8g/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl border-2 border-accent/40 hover:border-accent/70 text-accent-light hover:text-accent-light font-display font-bold text-base transition-all hover:bg-accent/5">
+                            <i class="fa-solid fa-file-invoice text-sm"></i>
+                            <span data-lang="en">Request a Quote</span><span data-lang="fr">Demander un Devis</span>
+                        </a>
+                        <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl border-2 border-accent/40 hover:border-accent/70 text-accent-light hover:text-accent-light font-display font-bold text-base transition-all hover:bg-accent/5">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <div class="pt-2">
+                        <a href="free-deliverability-audit/index.html" class="btn-tertiary">
+                            <i class="fa-solid fa-envelope-circle-check text-xs"></i>
+                            Run a free deliverability audit
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <p class="font-mono text-xs text-slate-500 pt-4">
+                        <i class="fa-solid fa-shield-halved mr-1"></i>
+                        All projects include documentation, testing, and post-launch support.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER:START -->
+<footer class="border-t border-slate-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <span class="font-mono text-accent font-bold text-xs">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-semibold text-sm text-slate-400">OL<span class="text-accent">DEV</span></span>
+                <span class="hidden md:inline font-mono text-xs text-slate-600">· WordPress Systems Engineer</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/lotfi-otmanine/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i></a>
+                <a href="https://github.com/Lotmanine" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="GitHub profile"><i class="fa-brands fa-github text-lg" aria-hidden="true"></i></a>
+                <a href="https://www.upwork.com/freelancers/~01bd748fcb665b90ca" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Upwork profile"><i class="fa-solid fa-arrow-up-right-from-square text-lg" aria-hidden="true"></i></a>
+            </div>
+            <p class="font-mono text-xs text-slate-600">&copy; 2026 OLDEV · Built with precision.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-float-label">Chat on WhatsApp</span>
+</a>
+<!-- FOOTER:END -->
+
+    <script src="js/main.js"></script>
+    <script src="js/lead-magnet.js"></script>
+</body>
+</html>

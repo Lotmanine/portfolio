@@ -1,0 +1,38 @@
+{
+  "en": {
+    "skip_to_content": "Skip to main content",
+    "nav_home": "WordPress Engineering",
+    "nav_crm_migration": "CRM Migration",
+    "nav_contact": "Contact",
+    "nav_audit_cta": "Free Audit",
+    "nav_open_menu": "Open menu",
+    "available_label": "Available",
+    "switch_language_aria": "Switch to French",
+    "lang_alt_label": "FR",
+    "lang_alt_hreflang": "fr",
+    "footer_tagline": "Built with precision.",
+    "footer_aria_linkedin": "LinkedIn profile",
+    "footer_aria_github": "GitHub profile",
+    "footer_aria_upwork": "Upwork profile",
+    "footer_brand_suffix": "WordPress Systems Engineer",
+    "wa_chat_label": "Chat on WhatsApp"
+  },
+  "fr": {
+    "skip_to_content": "Aller au contenu principal",
+    "nav_home": "Ingénierie WordPress",
+    "nav_crm_migration": "Migration CRM",
+    "nav_contact": "Contact",
+    "nav_audit_cta": "Audit Gratuit",
+    "nav_open_menu": "Ouvrir le menu",
+    "available_label": "Disponible",
+    "switch_language_aria": "Switch to English",
+    "lang_alt_label": "EN",
+    "lang_alt_hreflang": "en",
+    "footer_tagline": "Construit avec précision.",
+    "footer_aria_linkedin": "Profil LinkedIn",
+    "footer_aria_github": "Profil GitHub",
+    "footer_aria_upwork": "Profil Upwork",
+    "footer_brand_suffix": "Ingénieur Systèmes WordPress",
+    "wa_chat_label": "Discuter sur WhatsApp"
+  }
+}

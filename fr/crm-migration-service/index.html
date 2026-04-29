@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Migration CRM — ActiveCampaign, Keap, Klaviyo, Kajabi → FluentCRM | OLDEV</title>
+    <meta name="description" content="Migration CRM clé en main vers FluentCRM en 21 jours. Migrez depuis ActiveCampaign, Keap, Kajabi ou Klaviyo sans perdre vos automatisations, contacts ou délivrabilité. Licence FluentCRM Pro incluse.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="index.html">
+    <link rel="alternate" hreflang="en" href="../../crm-migration-service/index.html">
+    <link rel="alternate" hreflang="fr" href="index.html">
+    <link rel="alternate" hreflang="x-default" href="../../crm-migration-service/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Service Migration CRM — ActiveCampaign / Keap / Klaviyo / Kajabi → FluentCRM">
+    <meta property="og:description" content="Migration CRM clé en main vers FluentCRM en 21 jours. Licence FluentCRM Pro et audit de délivrabilité inclus dans chaque offre.">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:url" content="index.html">
+    <meta property="og:image" content="../../images/og-crm-migration-fr.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Service Migration CRM — FluentCRM en 21 jours">
+    <meta name="twitter:description" content="Migrez d'ActiveCampaign / Keap / Klaviyo / Kajabi vers FluentCRM, automatisations + délivrabilité + licence incluses.">
+    <meta name="twitter:image" content="../../images/og-crm-migration-fr.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#020617', 925: '#0a0f1e', 900: '#0f172a', 850: '#131b2e',
+                            800: '#1e293b', 700: '#334155', 600: '#475569', 500: '#64748b',
+                            400: '#94a3b8', 300: '#cbd5e1', 200: '#e2e8f0', 100: '#f1f5f9',
+                        },
+                        accent: {
+                            DEFAULT: '#10b981', light: '#34d399', dark: '#059669',
+                            glow: 'rgba(16, 185, 129, 0.15)',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="grid-bg">
+
+    <!-- HEADER:START -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-slate-950/70 border-b border-slate-800/50 transition-all duration-300" aria-label="Primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-18">
+            <a href="../../index.html" class="flex items-center gap-3 group" aria-label="OLDEV — home">
+                <div class="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <span class="font-mono text-accent font-bold text-sm">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-bold text-lg text-slate-100 tracking-tight">OL<span class="text-accent">DEV</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="../../index.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">Ingénierie WordPress</a>
+                <a href="../../crm-migration-service/index.html" class="nav-link active text-sm text-slate-400 hover:text-accent transition-colors font-medium">Migration CRM</a>
+                <a href="../../contact.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">Contact</a>
+                <a href="../../free-deliverability-audit/index.html" class="nav-cta ">Audit Gratuit</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/5 border border-accent/20">
+                    <span class="relative flex h-2 w-2">
+                        <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    <span class="text-xs font-mono text-accent font-medium">Disponible</span>
+                </div>
+                <a href="../../crm-migration-service/index.html" hreflang="en" aria-label="Switch to English" class="lang-switch font-mono text-xs font-medium text-slate-400 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-700/50 hover:border-accent/30">EN</a>
+                <button id="mobile-toggle" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-accent hover:border-accent/30 transition-colors" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/50 bg-slate-950/95">
+        <div class="px-4 py-4 space-y-1">
+            <a href="../../index.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Ingénierie WordPress</a>
+            <a href="../../crm-migration-service/index.html" class="mobile-nav-link active block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Migration CRM</a>
+            <a href="../../contact.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Contact</a>
+            <a href="../../free-deliverability-audit/index.html" class="mobile-nav-cta block px-3 py-2.5 rounded-lg text-sm font-display font-semibold transition-colors">Audit Gratuit</a>
+            <div class="pt-2 flex items-center gap-2 px-3 py-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span class="text-xs font-mono text-accent font-medium">Disponible</span>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- HEADER:END -->
+
+
+    <main id="main-content">
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60">
+                        <span class="font-mono text-accent text-xs">$</span>
+                        <span class="font-mono text-slate-300 text-xs">
+                            <span data-lang="en">crm-migrate <span class="text-accent">--from</span> activecampaign <span class="text-accent">--to</span> fluentcrm</span>
+                            <span data-lang="fr">crm-migrate <span class="text-accent">--de</span> activecampaign <span class="text-accent">--vers</span> fluentcrm</span>
+                        </span>
+                        <span class="w-2 h-4 bg-accent/80 cursor-blink"></span>
+                    </div>
+                    <div class="reveal space-y-4" style="transition-delay: 0.1s;">
+                        <h1 class="font-display font-900 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight">
+                            <span class="text-slate-100" data-lang="en">Migrate to</span>
+                            <span class="text-slate-100" data-lang="fr">Migrez vers</span><br>
+                            <span class="text-gradient">FluentCRM in 21 Days</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-slate-400 font-light max-w-2xl leading-relaxed">
+                            <span data-lang="en">Done-for-you migration from ActiveCampaign, Keap, Klaviyo, or Kajabi — automations preserved, deliverability intact, FluentCRM Pro license included.</span>
+                            <span data-lang="fr">Migration clé en main depuis ActiveCampaign, Keap, Klaviyo ou Kajabi — automatisations préservées, délivrabilité intacte, licence FluentCRM Pro incluse.</span>
+                        </p>
+                    </div>
+                    <div class="reveal" style="transition-delay: 0.2s;">
+                        <p data-lang="en" class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                            You're paying $250–$300/month for a CRM you've outgrown. I move you to FluentCRM (one-time $129/year), rebuild every automation, validate inbox placement, and hand you the keys — <span class="text-slate-200 font-medium">in 21 days</span>, with a <span class="text-accent font-medium">full rollback plan</span> on Day 1.
+                        </p>
+                        <p data-lang="fr" class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                            Vous payez 250–300 $/mois pour un CRM trop cher. Je vous fais passer sur FluentCRM (129 $/an, paiement unique), reconstruis chaque automatisation, valide la délivrabilité et vous remets les clés — <span class="text-slate-200 font-medium">en 21 jours</span>, avec <span class="text-accent font-medium">plan de rollback complet</span> dès le Jour 1.
+                        </p>
+                    </div>
+                    <div class="reveal flex flex-wrap items-center gap-4" style="transition-delay: 0.3s;">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8bSBRHmSHbgyo_nnlhqsJAgUkRwTSyS-QC83OL_RX2-ZR8g/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-accent hover:bg-accent-light text-slate-950 font-display font-semibold text-sm transition-all hover:shadow-lg hover:shadow-accent/20">
+                            <i class="fa-solid fa-file-invoice text-xs"></i>
+                            <span data-lang="en">Request a Quote</span><span data-lang="fr">Demander un Devis</span>
+                        </a>
+                        <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-accent/40 hover:border-accent/70 text-accent-light hover:text-accent-light font-display font-medium text-sm transition-all hover:bg-accent/5">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span data-lang="en">Chat on WhatsApp</span><span data-lang="fr">Discuter sur WhatsApp</span>
+                        </a>
+                    </div>
+                    <div class="reveal flex flex-wrap items-center gap-6 sm:gap-10 pt-4" style="transition-delay: 0.4s;">
+                        <div>
+                            <div class="font-display font-bold text-2xl text-slate-100">21<span class="text-slate-500 text-lg"> days</span></div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5"><span data-lang="en">Standard timeline</span><span data-lang="fr">Délai standard</span></div>
+                        </div>
+                        <div class="w-px h-10 bg-slate-800"></div>
+                        <div>
+                            <div class="font-display font-bold text-2xl text-slate-100">4</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5"><span data-lang="en">Source CRMs supported</span><span data-lang="fr">CRMs sources supportés</span></div>
+                        </div>
+                        <div class="w-px h-10 bg-slate-800"></div>
+                        <div>
+                            <div class="font-display font-bold text-2xl text-slate-100">$129<span class="text-slate-500 text-lg"> value</span></div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5"><span data-lang="en">FluentCRM Pro included</span><span data-lang="fr">FluentCRM Pro inclus</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 reveal" style="transition-delay: 0.3s;">
+                    <div class="relative">
+                        <div class="bento-card rounded-2xl p-6 font-mono text-sm space-y-3 overflow-hidden">
+                            <div class="flex items-center gap-2 pb-3 border-b border-slate-700/50">
+                                <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
+                                <span class="text-slate-500 text-xs ml-2">migration-plan.sh</span>
+                            </div>
+                            <div class="space-y-1.5 text-xs sm:text-sm">
+                                <p><span class="text-accent">$</span> <span class="text-slate-300">oldev-migrate</span> <span class="text-accent-light">--source ac --target fluentcrm</span></p>
+                                <p class="text-slate-500">→ Auditing source CRM (12,400 contacts, 38 automations)...</p>
+                                <p class="text-slate-500">→ Mapping tags, custom fields, segments...</p>
+                                <p class="text-slate-500">→ Installing FluentCRM Pro on staging...</p>
+                                <p class="text-slate-500">→ Importing contacts (subscription state preserved)...</p>
+                                <p class="text-slate-500">→ Rebuilding 38 automations with parity tests...</p>
+                                <p class="text-slate-500">→ Configuring SPF / DKIM / DMARC...</p>
+                                <p class="text-slate-500">→ Sending seed-list deliverability test...</p>
+                                <p class="pt-2"><span class="text-accent">✓</span> <span class="text-accent">Inbox placement: Gmail 100%, Outlook 100%</span></p>
+                                <p><span class="text-accent">✓</span> <span class="text-slate-300">Cutover complete →</span> <span class="text-accent-light">handover.loom</span></p>
+                                <p class="text-slate-400">→ <span class="text-slate-300">Annual savings:</span> <span class="text-accent">$3,471/yr forever</span></p>
+                                <p class="pt-1"><span class="text-accent">$</span> <span class="w-2 h-4 inline-block bg-accent/80 cursor-blink"></span></p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 px-3 py-1.5 rounded-lg bg-accent text-slate-950 font-mono text-xs font-bold shadow-lg shadow-accent/20">DAY_21</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PROBLEM / WHY MIGRATE ===== -->
+    <section class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <div class="reveal space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/20">
+                        <i class="fa-solid fa-triangle-exclamation text-red-400 text-xs"></i>
+                        <span class="font-mono text-red-400 text-xs font-medium"><span data-lang="en">The Cost of Standing Still</span><span data-lang="fr">Le Coût de l'Inaction</span></span>
+                    </div>
+                    <div data-lang="en">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Your CRM bill is bleeding<br><span class="text-slate-500">$3,000–$5,000 a year.</span></h2>
+                        <div class="space-y-4 mt-6 text-slate-400 leading-relaxed">
+                            <p>ActiveCampaign Plus at <span class="text-slate-200">$250/mo</span>, Keap Pro at <span class="text-slate-200">$249/mo</span>, Kajabi Growth at <span class="text-slate-200">$199/mo</span> — the recurring tax on your business adds up to <span class="text-red-400">five-figure overspend by year three</span>.</p>
+                            <p>FluentCRM Pro is <span class="text-accent font-medium">$129/year, one-time</span>. Same automations. Same deliverability. Same contacts. Yours, on your WordPress, with no per-contact pricing.</p>
+                            <p>The blocker isn't the math — it's the <span class="text-slate-200">21 days of risky migration work</span> nobody on your team has time to do safely.</p>
+                        </div>
+                    </div>
+                    <div data-lang="fr">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Votre facture CRM saigne<br><span class="text-slate-500">3 000 à 5 000 $ par an.</span></h2>
+                        <div class="space-y-4 mt-6 text-slate-400 leading-relaxed">
+                            <p>ActiveCampaign Plus à <span class="text-slate-200">250 $/mois</span>, Keap Pro à <span class="text-slate-200">249 $/mois</span>, Kajabi Growth à <span class="text-slate-200">199 $/mois</span> — la taxe récurrente atteint <span class="text-red-400">un surcoût à cinq chiffres en trois ans</span>.</p>
+                            <p>FluentCRM Pro coûte <span class="text-accent font-medium">129 $/an, une seule fois</span>. Mêmes automatisations. Même délivrabilité. Mêmes contacts. Sur votre WordPress, sans tarification par contact.</p>
+                            <p>Le blocage n'est pas mathématique — c'est <span class="text-slate-200">21 jours de migration risquée</span> que personne dans votre équipe n'a le temps de faire correctement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal space-y-6" style="transition-delay: 0.15s;">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20">
+                        <i class="fa-solid fa-shield-halved text-accent text-xs"></i>
+                        <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">What I Hand You Back</span><span data-lang="fr">Ce Que Je Vous Rends</span></span>
+                    </div>
+                    <div data-lang="en">
+                        <h3 class="font-display font-700 text-2xl sm:text-3xl text-slate-100 leading-tight">A FluentCRM stack that runs your business — at one-tenth the cost.</h3>
+                    </div>
+                    <div data-lang="fr">
+                        <h3 class="font-display font-700 text-2xl sm:text-3xl text-slate-100 leading-tight">Un stack FluentCRM qui pilote votre activité — au dixième du coût.</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-circle-check text-accent text-sm promise-icon"></i></div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm"><span data-lang="en">Every automation rebuilt and parity-tested</span><span data-lang="fr">Chaque automatisation reconstruite et testée</span></h4>
+                                <p class="text-slate-500 text-xs mt-0.5"><span data-lang="en">I rebuild each automation in FluentCRM and run it against a dummy contact before cutover. No silent failures on day 22.</span><span data-lang="fr">Chaque automatisation reconstruite dans FluentCRM, testée avec un contact factice avant la bascule. Pas de défaillance silencieuse au jour 22.</span></p>
+                            </div>
+                        </div>
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-envelope-circle-check text-accent text-sm promise-icon"></i></div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm"><span data-lang="en">Deliverability validated, not assumed</span><span data-lang="fr">Délivrabilité validée, pas supposée</span></h4>
+                                <p class="text-slate-500 text-xs mt-0.5"><span data-lang="en">SPF / DKIM / DMARC configured, sending domain warmed, seed-list inbox placement confirmed across Gmail, Outlook, Yahoo before go-live.</span><span data-lang="fr">SPF / DKIM / DMARC configurés, domaine d'envoi préchauffé, placement boîte de réception confirmé sur Gmail, Outlook, Yahoo avant lancement.</span></p>
+                            </div>
+                        </div>
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-rotate-left text-accent text-sm promise-icon"></i></div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm"><span data-lang="en">Rollback plan ready before any change</span><span data-lang="fr">Plan de rollback prêt avant tout changement</span></h4>
+                                <p class="text-slate-500 text-xs mt-0.5"><span data-lang="en">Full WPVivid backup, staging-first work where possible, source CRM kept warm until Day 21. If something breaks, we revert in minutes, not days.</span><span data-lang="fr">Sauvegarde WPVivid complète, travail sur staging, CRM source actif jusqu'au Jour 21. En cas de pépin, retour arrière en minutes.</span></p>
+                            </div>
+                        </div>
+                        <div class="promise-card flex gap-4 items-start p-3 rounded-xl hover:bg-accent/5 transition-colors">
+                            <div class="mt-0.5 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-key text-accent text-sm promise-icon"></i></div>
+                            <div>
+                                <h4 class="font-display font-semibold text-slate-200 text-sm"><span data-lang="en">You own the license, the code, the docs</span><span data-lang="fr">La licence, le code et la doc vous appartiennent</span></h4>
+                                <p class="text-slate-500 text-xs mt-0.5"><span data-lang="en">FluentCRM Pro license registered to your account. Loom walkthrough + written runbook. No vendor lock-in. No black boxes.</span><span data-lang="fr">Licence FluentCRM Pro à votre nom. Vidéo Loom + runbook écrit. Pas de dépendance, pas de boîte noire.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== MIGRATION PATHS ===== -->
+    <section id="paths" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-12 sm:mb-16">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">Migration Paths Supported</span><span data-lang="fr">Migrations Supportées</span></span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">Coming from one of these?</span><span data-lang="fr">Vous venez d'une de ces plateformes ?</span></h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed"><span data-lang="en">Each path has its own quirks — automation export formats, custom-field shapes, integration webhooks. I've mapped the gotchas so you don't have to.</span><span data-lang="fr">Chaque migration a ses spécificités — formats d'export, champs personnalisés, webhooks. J'ai déjà cartographié les pièges.</span></p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 sm:gap-5">
+                <div class="reveal path-card">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-bolt text-accent text-lg"></i></div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="font-display font-bold text-slate-100">ActiveCampaign</span>
+                            <span class="path-arrow">→</span>
+                            <span class="font-display font-bold text-accent">FluentCRM</span>
+                        </div>
+                        <p class="text-slate-500 text-xs mt-1.5"><span data-lang="en">Lists, tags, automation flowcharts, deal pipelines, custom fields — all preserved. Most-requested path.</span><span data-lang="fr">Listes, tags, automatisations, pipelines, champs personnalisés — tout préservé. La migration la plus demandée.</span></p>
+                    </div>
+                </div>
+                <div class="reveal path-card" style="transition-delay: 0.08s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-handshake text-accent text-lg"></i></div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="font-display font-bold text-slate-100">Keap (Infusionsoft)</span>
+                            <span class="path-arrow">→</span>
+                            <span class="font-display font-bold text-accent">FluentCRM</span>
+                        </div>
+                        <p class="text-slate-500 text-xs mt-1.5"><span data-lang="en">Campaign Builder sequences, broadcasts, tags, Memberium membership integrations — rebuilt with parity tests.</span><span data-lang="fr">Séquences Campaign Builder, broadcasts, tags, intégrations Memberium — reconstruits avec tests.</span></p>
+                    </div>
+                </div>
+                <div class="reveal path-card" style="transition-delay: 0.16s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-graduation-cap text-accent text-lg"></i></div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="font-display font-bold text-slate-100">Kajabi</span>
+                            <span class="path-arrow">→</span>
+                            <span class="font-display font-bold text-accent">FluentCRM</span>
+                        </div>
+                        <p class="text-slate-500 text-xs mt-1.5"><span data-lang="en">For course creators moving the email engine to WordPress while keeping Kajabi for hosting (or migrating off entirely to LearnDash/LifterLMS).</span><span data-lang="fr">Pour les créateurs de cours qui déplacent l'email vers WordPress tout en gardant Kajabi pour l'hébergement (ou migration totale vers LearnDash).</span></p>
+                    </div>
+                </div>
+                <div class="reveal path-card" style="transition-delay: 0.24s;">
+                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-cart-shopping text-accent text-lg"></i></div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="font-display font-bold text-slate-100">Klaviyo</span>
+                            <span class="path-arrow">→</span>
+                            <span class="font-display font-bold text-accent">FluentCRM</span>
+                        </div>
+                        <p class="text-slate-500 text-xs mt-1.5"><span data-lang="en">WooCommerce stores moving from Klaviyo's per-contact pricing. Flows, segments, abandoned-cart logic ported over.</span><span data-lang="fr">Boutiques WooCommerce qui quittent la tarification par contact de Klaviyo. Flows, segments, paniers abandonnés portés.</span></p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-10 max-w-2xl mx-auto"><span data-lang="en">Coming from a different CRM? <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="text-accent underline hover:text-accent-light">Message me on WhatsApp</a> — most are migratable, I'll tell you on the spot.</span><span data-lang="fr">Vous venez d'un autre CRM ? <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="text-accent underline hover:text-accent-light">Écrivez-moi sur WhatsApp</a> — la plupart sont migrables, je vous le confirme tout de suite.</span></p>
+        </div>
+    </section>
+
+
+    <!-- ===== WHAT'S INCLUDED ===== -->
+    <section id="included" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">What's In The Box</span><span data-lang="fr">Ce Qui Est Inclus</span></span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">Every migration includes</span><span data-lang="fr">Chaque migration inclut</span></h2>
+            </div>
+
+            <div class="reveal bento-card rounded-2xl p-6 sm:p-8 mb-6 max-w-3xl mx-auto">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-gift text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg sm:text-xl text-slate-100"><span data-lang="en">FluentCRM Pro license — included on every tier</span><span data-lang="fr">Licence FluentCRM Pro — incluse sur chaque tier</span></h3>
+                        <p class="text-slate-400 text-sm sm:text-base mt-2 leading-relaxed">
+                            <span data-lang="en">A 1-year FluentCRM Pro single-site license (<span class="line-through text-slate-500">$129 retail</span> — <span class="text-accent font-medium">included, $0</span>) is registered to your account on Day 5. You own it. We just save you the line item.</span>
+                            <span data-lang="fr">Une licence FluentCRM Pro 1 an site unique (<span class="line-through text-slate-500">129 $ tarif public</span> — <span class="text-accent font-medium">incluse, 0 $</span>) enregistrée à votre nom dès le Jour 5. Elle vous appartient. C'est juste une ligne en moins sur votre facture.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal bento-card rounded-2xl p-6 sm:p-8 mb-10 max-w-3xl mx-auto">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-envelope-circle-check text-accent text-lg"></i></div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg sm:text-xl text-slate-100"><span data-lang="en">Email deliverability audit &amp; fixes — bundled in</span><span data-lang="fr">Audit &amp; corrections de délivrabilité — inclus</span></h3>
+                        <p class="text-slate-400 text-sm sm:text-base mt-2 leading-relaxed">
+                            <span data-lang="en">Migrations almost always expose a deliverability gap that was already there — broken SPF, missing DKIM, lazy DMARC, or a sending IP on a public blacklist. I audit and fix every one of these <span class="text-slate-200 font-medium">during the migration, not after</span>: SPF / DKIM / DMARC properly configured, blacklist remediation, sender-reputation review, seed-list inbox-placement test on Gmail / Outlook / Yahoo. <span class="text-accent font-medium">Not a separate upsell — it ships with every tier.</span></span>
+                            <span data-lang="fr">Une migration révèle presque toujours une faille de délivrabilité préexistante — SPF cassé, DKIM manquant, DMARC laxiste, ou IP d'envoi blacklistée. J'audite et je corrige tout ça <span class="text-slate-200 font-medium">pendant la migration, pas après</span> : SPF / DKIM / DMARC correctement configurés, sortie de blacklist, revue de réputation, test seed-list Gmail / Outlook / Yahoo. <span class="text-accent font-medium">Pas un upsell — c'est inclus dans chaque tier.</span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                <div class="reveal bento-card rounded-xl p-5 space-y-2">
+                    <i class="fa-solid fa-magnifying-glass-chart text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Pre-migration audit</span><span data-lang="fr">Audit pré-migration</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Day 1–2. Full inventory of contacts, tags, automations, integrations. Risk register and rollback plan documented before any change.</span><span data-lang="fr">Jours 1–2. Inventaire complet des contacts, tags, automatisations, intégrations. Registre des risques et plan de rollback documentés.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.05s;">
+                    <i class="fa-solid fa-database text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Source CRM export</span><span data-lang="fr">Export CRM source</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Contacts, tags, custom fields, segments, automations — pulled, normalized with Python pandas, ready to import.</span><span data-lang="fr">Contacts, tags, champs personnalisés, segments, automatisations — extraits, normalisés avec Python pandas, prêts à importer.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.10s;">
+                    <i class="fa-solid fa-server text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">FluentCRM Pro install + DNS</span><span data-lang="fr">Install FluentCRM Pro + DNS</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Day 5–7. Plugin installed, SMTP wired, SPF/DKIM/DMARC published, sending domain warm-up started.</span><span data-lang="fr">Jours 5–7. Plugin installé, SMTP configuré, SPF/DKIM/DMARC publiés, préchauffage du domaine d'envoi.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.15s;">
+                    <i class="fa-solid fa-people-arrows text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Contact import w/ subscription state</span><span data-lang="fr">Import contacts + statut</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Day 8–10. Tag mapping, custom fields, opt-in status preserved exactly. Sample-batch verification before full import.</span><span data-lang="fr">Jours 8–10. Mapping des tags, champs personnalisés, statut opt-in préservés. Vérification sur échantillon avant import complet.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.20s;">
+                    <i class="fa-solid fa-diagram-project text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Automation rebuild + parity tests</span><span data-lang="fr">Reconstruction des automatisations</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Day 11–16. The hard part. Each automation re-implemented in FluentCRM, fired against a dummy contact, output diffed against the source.</span><span data-lang="fr">Jours 11–16. La partie difficile. Chaque automatisation réimplémentée, exécutée sur un contact factice, sortie comparée à la source.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.25s;">
+                    <i class="fa-solid fa-plug-circle-check text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Integration wiring</span><span data-lang="fr">Branchement des intégrations</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Day 17–18. WooCommerce, LearnDash, Memberium, forms — re-routed to FluentCRM. End-to-end data flow verified.</span><span data-lang="fr">Jours 17–18. WooCommerce, LearnDash, Memberium, formulaires — redirigés vers FluentCRM. Flux complet vérifié.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.30s;">
+                    <i class="fa-solid fa-paper-plane text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Deliverability audit &amp; fixes</span><span data-lang="fr">Audit &amp; corrections de délivrabilité</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">SPF / DKIM / DMARC properly configured, blacklist remediation, sender-reputation review, seed-list test on Gmail / Outlook / Yahoo. Bundled in — not a separate upsell.</span><span data-lang="fr">SPF / DKIM / DMARC correctement configurés, sortie de blacklist, revue de réputation, test seed-list Gmail / Outlook / Yahoo. Inclus — pas un upsell.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.35s;">
+                    <i class="fa-solid fa-arrow-right-arrow-left text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Cutover + 24h monitoring</span><span data-lang="fr">Bascule + monitoring 24h</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Day 20. Webhooks redirected, source CRM frozen, FluentCRM live. I watch the logs for 24 hours. Anything weird, I catch first.</span><span data-lang="fr">Jour 20. Webhooks redirigés, CRM source figé, FluentCRM en production. Je surveille les logs 24h. Le moindre signal, je le vois en premier.</span></p>
+                </div>
+                <div class="reveal bento-card rounded-xl p-5 space-y-2" style="transition-delay: 0.40s;">
+                    <i class="fa-solid fa-graduation-cap text-accent text-lg"></i>
+                    <h4 class="font-display font-bold text-slate-100"><span data-lang="en">Handover + support window</span><span data-lang="fr">Remise + fenêtre de support</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Day 21. Loom walkthrough, written runbook, automation map, and a post-migration support window so bugs are on me, not you.</span><span data-lang="fr">Jour 21. Vidéo Loom, runbook écrit, carte des automatisations, et une fenêtre de support post-migration : les bugs sont à ma charge.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">Pricing</span><span data-lang="fr">Tarification</span></span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">Three tiers. One-time fee.</span><span data-lang="fr">Trois tiers. Paiement unique.</span></h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed"><span data-lang="en">Every tier includes a <span class="text-accent font-medium">FluentCRM Pro license ($129 retail value)</span>. No monthly fee from me. Pick the tier that matches your data complexity.</span><span data-lang="fr">Chaque tier inclut une <span class="text-accent font-medium">licence FluentCRM Pro (valeur 129 $)</span>. Aucun frais mensuel. Choisissez selon la complexité de vos données.</span></p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+                <!-- STARTER -->
+                <div class="reveal pricing-card">
+                    <div class="space-y-2 mb-6">
+                        <span class="font-mono text-slate-500 text-xs uppercase tracking-wider"><span data-lang="en">Starter</span><span data-lang="fr">Starter</span></span>
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="font-display font-900 text-4xl text-slate-100">$1,297</span>
+                            <span class="text-slate-500 text-sm font-mono"><span data-lang="en">one-time</span><span data-lang="fr">unique</span></span>
+                        </div>
+                        <p class="text-slate-400 text-sm"><span data-lang="en">For solo creators with a tidy single-source CRM and standard automations.</span><span data-lang="fr">Pour les créateurs solo avec un CRM simple et des automatisations standard.</span></p>
+                    </div>
+                    <div class="space-y-3 flex-1">
+                        <div class="pricing-feature included">
+                            <i class="fa-solid fa-gift mt-1"></i>
+                            <span><span data-lang="en"><strong class="text-slate-100">FluentCRM Pro license included</strong> <span class="text-slate-500">(<span class="line-through">$129 value</span>)</span></span><span data-lang="fr"><strong class="text-slate-100">Licence FluentCRM Pro incluse</strong> <span class="text-slate-500">(<span class="line-through">129 $ valeur</span>)</span></span></span>
+                        </div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Up to <strong class="text-slate-200">5,000 contacts</strong> migrated</span><span data-lang="fr">Jusqu'à <strong class="text-slate-200">5 000 contacts</strong> migrés</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Up to <strong class="text-slate-200">8 automations</strong> rebuilt and parity-tested</span><span data-lang="fr">Jusqu'à <strong class="text-slate-200">8 automatisations</strong> reconstruites et testées</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Standard tag &amp; custom-field mapping</span><span data-lang="fr">Mapping standard tags &amp; champs personnalisés</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Email deliverability audit &amp; fixes — SPF / DKIM / DMARC, blacklist remediation, seed-list test <span class="text-slate-500">(included)</span></span><span data-lang="fr">Audit &amp; corrections de délivrabilité — SPF / DKIM / DMARC, sortie de blacklist, test seed-list <span class="text-slate-500">(inclus)</span></span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">1 integration (Woo, LearnDash, or forms)</span><span data-lang="fr">1 intégration (Woo, LearnDash, ou formulaires)</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en"><strong class="text-slate-200">14-day</strong> post-migration support</span><span data-lang="fr">Support <strong class="text-slate-200">14 jours</strong> post-migration</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Loom walkthrough + written runbook</span><span data-lang="fr">Vidéo Loom + runbook écrit</span></span></div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8bSBRHmSHbgyo_nnlhqsJAgUkRwTSyS-QC83OL_RX2-ZR8g/viewform" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-accent/40 hover:border-accent/70 text-accent-light hover:text-accent-light font-display font-semibold text-sm transition-all hover:bg-accent/5">
+                        <i class="fa-solid fa-file-invoice text-xs"></i>
+                        <span data-lang="en">Request a Quote</span><span data-lang="fr">Demander un Devis</span>
+                    </a>
+                </div>
+
+                <!-- PROFESSIONAL (Featured) -->
+                <div class="reveal pricing-card featured" style="transition-delay: 0.1s;">
+                    <span class="pricing-badge"><span data-lang="en">MOST POPULAR</span><span data-lang="fr">PLUS POPULAIRE</span></span>
+                    <div class="space-y-2 mb-6">
+                        <span class="font-mono text-accent text-xs uppercase tracking-wider"><span data-lang="en">Professional</span><span data-lang="fr">Professional</span></span>
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="font-display font-900 text-4xl text-slate-100">$2,497</span>
+                            <span class="text-slate-500 text-sm font-mono"><span data-lang="en">one-time</span><span data-lang="fr">unique</span></span>
+                        </div>
+                        <p class="text-slate-400 text-sm"><span data-lang="en">For established coaches, consultants, and course creators with active automations.</span><span data-lang="fr">Pour coachs, consultants et créateurs de cours établis avec automatisations actives.</span></p>
+                    </div>
+                    <div class="space-y-3 flex-1">
+                        <div class="pricing-feature included">
+                            <i class="fa-solid fa-gift mt-1"></i>
+                            <span><span data-lang="en"><strong class="text-slate-100">FluentCRM Pro license included</strong> <span class="text-slate-500">(<span class="line-through">$129 value</span>)</span></span><span data-lang="fr"><strong class="text-slate-100">Licence FluentCRM Pro incluse</strong> <span class="text-slate-500">(<span class="line-through">129 $ valeur</span>)</span></span></span>
+                        </div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Up to <strong class="text-slate-200">25,000 contacts</strong> migrated</span><span data-lang="fr">Jusqu'à <strong class="text-slate-200">25 000 contacts</strong> migrés</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Up to <strong class="text-slate-200">25 automations</strong> rebuilt with parity tests</span><span data-lang="fr">Jusqu'à <strong class="text-slate-200">25 automatisations</strong> reconstruites et testées</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Complex tag &amp; custom-field mapping (segmentation logic preserved)</span><span data-lang="fr">Mapping complexe tags &amp; champs (logique de segmentation préservée)</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Full deliverability audit &amp; fixes — SMTP, warmup, SPF / DKIM / DMARC, blacklist + reputation review <span class="text-slate-500">(included)</span></span><span data-lang="fr">Audit délivrabilité complet — SMTP, préchauffage, SPF / DKIM / DMARC, blacklists + réputation <span class="text-slate-500">(inclus)</span></span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Up to <strong class="text-slate-200">3 integrations</strong> (WooCommerce, LearnDash, Memberium, forms)</span><span data-lang="fr">Jusqu'à <strong class="text-slate-200">3 intégrations</strong> (WooCommerce, LearnDash, Memberium, formulaires)</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en"><strong class="text-slate-200">30-day</strong> post-migration support window</span><span data-lang="fr">Support <strong class="text-slate-200">30 jours</strong> post-migration</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Loom walkthrough + runbook + 1× live training session</span><span data-lang="fr">Loom + runbook + 1 session de formation live</span></span></div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8bSBRHmSHbgyo_nnlhqsJAgUkRwTSyS-QC83OL_RX2-ZR8g/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary mt-8 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-accent hover:bg-accent-light text-slate-950 font-display font-bold text-sm transition-all hover:shadow-lg hover:shadow-accent/20">
+                        <i class="fa-solid fa-file-invoice text-xs"></i>
+                        <span data-lang="en">Request a Quote</span><span data-lang="fr">Demander un Devis</span>
+                    </a>
+                </div>
+
+                <!-- ENTERPRISE -->
+                <div class="reveal pricing-card" style="transition-delay: 0.2s;">
+                    <div class="space-y-2 mb-6">
+                        <span class="font-mono text-slate-500 text-xs uppercase tracking-wider"><span data-lang="en">Enterprise</span><span data-lang="fr">Enterprise</span></span>
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="font-display font-900 text-4xl text-slate-100">$4,997</span>
+                            <span class="text-slate-500 text-sm font-mono"><span data-lang="en">one-time</span><span data-lang="fr">unique</span></span>
+                        </div>
+                        <p class="text-slate-400 text-sm"><span data-lang="en">For agencies, membership sites, and businesses with deep automation and multi-platform integrations.</span><span data-lang="fr">Pour agences, sites de membres et entreprises avec automatisations profondes et intégrations multi-plateformes.</span></p>
+                    </div>
+                    <div class="space-y-3 flex-1">
+                        <div class="pricing-feature included">
+                            <i class="fa-solid fa-gift mt-1"></i>
+                            <span><span data-lang="en"><strong class="text-slate-100">FluentCRM Pro license included</strong> <span class="text-slate-500">(<span class="line-through">$129 value</span>)</span></span><span data-lang="fr"><strong class="text-slate-100">Licence FluentCRM Pro incluse</strong> <span class="text-slate-500">(<span class="line-through">129 $ valeur</span>)</span></span></span>
+                        </div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en"><strong class="text-slate-200">Unlimited</strong> contacts migrated</span><span data-lang="fr"><strong class="text-slate-200">Illimité</strong> contacts migrés</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en"><strong class="text-slate-200">Unlimited</strong> automations — including multi-branch and conditional logic</span><span data-lang="fr"><strong class="text-slate-200">Illimité</strong> automatisations — branches et conditions complexes</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Custom data transformations (Python pandas, SQL)</span><span data-lang="fr">Transformations de données personnalisées (Python pandas, SQL)</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Enterprise deliverability — multi-domain SPF / DKIM / DMARC, BIMI prep, blacklist + reputation monitoring <span class="text-slate-500">(included)</span></span><span data-lang="fr">Délivrabilité entreprise — SPF / DKIM / DMARC multi-domaines, préparation BIMI, surveillance blacklists + réputation <span class="text-slate-500">(inclus)</span></span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Dedicated staging environment + multi-stage cutover</span><span data-lang="fr">Environnement staging dédié + bascule multi-étapes</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en"><strong class="text-slate-200">Unlimited</strong> integrations (custom REST/webhooks supported)</span><span data-lang="fr"><strong class="text-slate-200">Illimité</strong> intégrations (REST/webhooks personnalisés)</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en"><strong class="text-slate-200">60-day</strong> support window + priority Slack channel</span><span data-lang="fr">Support <strong class="text-slate-200">60 jours</strong> + canal Slack prioritaire</span></span></div>
+                        <div class="pricing-feature"><i class="fa-solid fa-check"></i><span><span data-lang="en">Team training (up to 3 staff) + ongoing automation playbook</span><span data-lang="fr">Formation équipe (3 personnes) + playbook d'automatisation</span></span></div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8bSBRHmSHbgyo_nnlhqsJAgUkRwTSyS-QC83OL_RX2-ZR8g/viewform" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-accent/40 hover:border-accent/70 text-accent-light hover:text-accent-light font-display font-semibold text-sm transition-all hover:bg-accent/5">
+                        <i class="fa-solid fa-file-invoice text-xs"></i>
+                        <span data-lang="en">Request a Quote</span><span data-lang="fr">Demander un Devis</span>
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-500 text-xs mt-10 max-w-2xl mx-auto"><span data-lang="en">Not sure which tier? <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="text-accent underline hover:text-accent-light">Send your contact count and CRM on WhatsApp</a> — I'll quote in under an hour.</span><span data-lang="fr">Indécis ? <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="text-accent underline hover:text-accent-light">Envoyez le nombre de contacts et le CRM sur WhatsApp</a> — réponse en moins d'une heure.</span></p>
+        </div>
+    </section>
+
+
+    <!-- ===== PROCESS / TIMELINE ===== -->
+    <section id="process" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-16">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">The 21-Day Process</span><span data-lang="fr">Processus 21 Jours</span></span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">From kickoff to handover</span><span data-lang="fr">Du kickoff à la remise</span></h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5 sm:gap-6">
+                <div class="reveal process-step">
+                    <span class="step-num">01</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Discovery &amp; Audit</span><span data-lang="fr">Découverte &amp; Audit</span> <span class="text-slate-500 font-mono text-xs ml-2">D1–D2</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Discovery questionnaire returned, source-CRM walkthrough call, complete inventory documented in your shared Notion. Risk register signed off.</span><span data-lang="fr">Questionnaire retourné, call de revue du CRM source, inventaire complet dans Notion partagé. Registre des risques validé.</span></p>
+                </div>
+                <div class="reveal process-step" style="transition-delay: 0.05s;">
+                    <span class="step-num">02</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Source Export &amp; Backup</span><span data-lang="fr">Export Source &amp; Backup</span> <span class="text-slate-500 font-mono text-xs ml-2">D3–D4</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Full WPVivid backup of your WordPress. Source CRM exported, normalized through Python pandas, every automation captured as a JSON spec.</span><span data-lang="fr">Backup WPVivid complet. CRM source exporté, normalisé via Python pandas, chaque automatisation capturée en spec JSON.</span></p>
+                </div>
+                <div class="reveal process-step" style="transition-delay: 0.10s;">
+                    <span class="step-num">03</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">FluentCRM Setup &amp; DNS</span><span data-lang="fr">Setup FluentCRM &amp; DNS</span> <span class="text-slate-500 font-mono text-xs ml-2">D5–D7</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">FluentCRM Pro installed, SMTP wired, SPF / DKIM / DMARC published, sending domain warmup begins. Your license registered to you.</span><span data-lang="fr">FluentCRM Pro installé, SMTP configuré, SPF / DKIM / DMARC publiés, préchauffage domaine. Licence enregistrée à votre nom.</span></p>
+                </div>
+                <div class="reveal process-step" style="transition-delay: 0.15s;">
+                    <span class="step-num">04</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Contact Import</span><span data-lang="fr">Import des Contacts</span> <span class="text-slate-500 font-mono text-xs ml-2">D8–D10</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Sample-batch first, then full population. Tags, custom fields, opt-in status preserved. Diff report shared with you for sign-off.</span><span data-lang="fr">Échantillon d'abord, puis population complète. Tags, champs, statut opt-in préservés. Rapport diff partagé pour validation.</span></p>
+                </div>
+                <div class="reveal process-step" style="transition-delay: 0.20s;">
+                    <span class="step-num">05</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Automation Rebuild</span><span data-lang="fr">Reconstruction des Automatisations</span> <span class="text-slate-500 font-mono text-xs ml-2">D11–D16</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">The hardest 6 days. Each automation reimplemented in FluentCRM, fired against a dummy contact, output diffed against the source until parity.</span><span data-lang="fr">Les 6 jours les plus durs. Chaque automatisation réimplémentée, exécutée sur contact factice, sortie comparée jusqu'à parité.</span></p>
+                </div>
+                <div class="reveal process-step" style="transition-delay: 0.25s;">
+                    <span class="step-num">06</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Integration Wiring</span><span data-lang="fr">Branchement Intégrations</span> <span class="text-slate-500 font-mono text-xs ml-2">D17–D18</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">WooCommerce, LearnDash, Memberium, forms — all rerouted to FluentCRM. End-to-end test transactions verified.</span><span data-lang="fr">WooCommerce, LearnDash, Memberium, formulaires — redirigés. Transactions de test bout en bout vérifiées.</span></p>
+                </div>
+                <div class="reveal process-step" style="transition-delay: 0.30s;">
+                    <span class="step-num">07</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Deliverability Validation</span><span data-lang="fr">Validation Délivrabilité</span> <span class="text-slate-500 font-mono text-xs ml-2">D19</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Seed-list test: Gmail, Outlook, Yahoo. MXToolbox + Postmaster + EasyDMARC pass. Reputation gaps closed before any real send.</span><span data-lang="fr">Test seed-list : Gmail, Outlook, Yahoo. Vérifs MXToolbox + Postmaster + EasyDMARC. Écarts de réputation corrigés avant tout envoi réel.</span></p>
+                </div>
+                <div class="reveal process-step" style="transition-delay: 0.35s;">
+                    <span class="step-num">08</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Cutover &amp; Monitor</span><span data-lang="fr">Bascule &amp; Surveillance</span> <span class="text-slate-500 font-mono text-xs ml-2">D20</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Source CRM frozen, webhooks redirected, FluentCRM live. I watch the logs for 24 hours straight. Anything strange, you hear from me first.</span><span data-lang="fr">CRM source figé, webhooks redirigés, FluentCRM en production. Je surveille les logs 24h. Le moindre signal, vous le savez avant tout le monde.</span></p>
+                </div>
+                <div class="reveal process-step md:col-span-2" style="transition-delay: 0.40s;">
+                    <span class="step-num">09</span>
+                    <h4 class="font-display font-bold text-slate-100 mt-2 mb-1.5"><span data-lang="en">Handover &amp; Support Window Opens</span><span data-lang="fr">Remise &amp; Ouverture Fenêtre de Support</span> <span class="text-slate-500 font-mono text-xs ml-2">D21</span></h4>
+                    <p class="text-slate-400 text-sm"><span data-lang="en">Loom walkthrough, written runbook, automation map, shared Notion left in your hands. Support window opens — for 14, 30, or 60 days depending on tier — so any post-migration friction is on me, not your team.</span><span data-lang="fr">Vidéo Loom, runbook écrit, carte des automatisations, Notion partagé entre vos mains. Fenêtre de support ouverte — 14, 30 ou 60 jours selon le tier — toute friction post-migration à ma charge.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== TRUST / WHY ME ===== -->
+    <section id="trust" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 reveal">
+                    <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">Why Me</span><span data-lang="fr">Pourquoi Moi</span></span>
+                    <div data-lang="en">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight leading-tight">A systems engineer<br><span class="text-gradient">who lives in the stack.</span></h2>
+                        <p class="text-slate-400 mt-6 leading-relaxed">Generic agencies quote $10,000+ for "CRM migration" and outsource to a junior. DIY tutorials skip the hard parts — deliverability, automation parity, integration testing. I sit in the middle: deep specialist, single point of accountability, half the agency price.</p>
+                    </div>
+                    <div data-lang="fr">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight leading-tight">Un ingénieur systèmes<br><span class="text-gradient">qui vit dans la stack.</span></h2>
+                        <p class="text-slate-400 mt-6 leading-relaxed">Les agences génériques facturent 10 000 $+ et délèguent à un junior. Les tutos DIY oublient les parties difficiles — délivrabilité, parité des automatisations, tests d'intégration. Je suis au milieu : spécialiste, responsable unique, moitié du prix d'une agence.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 reveal grid sm:grid-cols-2 gap-4" style="transition-delay: 0.1s;">
+                    <div class="bento-card rounded-xl p-5">
+                        <i class="fa-solid fa-stopwatch text-accent text-lg"></i>
+                        <h4 class="font-display font-bold text-slate-100 mt-2"><span data-lang="en">7+ years in WordPress systems</span><span data-lang="fr">7+ ans en systèmes WordPress</span></h4>
+                        <p class="text-slate-400 text-sm mt-1"><span data-lang="en">Mission-critical infrastructure — not page-builder freelance work. CRM, automations, email, deliverability are my daily reality.</span><span data-lang="fr">Infrastructure critique — pas du freelance page-builder. CRM, automatisations, email, délivrabilité au quotidien.</span></p>
+                    </div>
+                    <div class="bento-card rounded-xl p-5">
+                        <i class="fa-solid fa-certificate text-accent text-lg"></i>
+                        <h4 class="font-display font-bold text-slate-100 mt-2"><span data-lang="en">ActiveCampaign Certified Consultant</span><span data-lang="fr">Consultant Certifié ActiveCampaign</span></h4>
+                        <p class="text-slate-400 text-sm mt-1"><span data-lang="en">Listed in the public AC consultant directory. I know exactly what your source CRM is doing under the hood.</span><span data-lang="fr">Référencé dans l'annuaire public AC. Je sais précisément ce que fait votre CRM source sous le capot.</span></p>
+                    </div>
+                    <div class="bento-card rounded-xl p-5">
+                        <i class="fa-solid fa-envelope-circle-check text-accent text-lg"></i>
+                        <h4 class="font-display font-bold text-slate-100 mt-2"><span data-lang="en">Deliverability is my specialty</span><span data-lang="fr">La délivrabilité est ma spécialité</span></h4>
+                        <p class="text-slate-400 text-sm mt-1"><span data-lang="en">SPF, DKIM, DMARC, sender reputation. Most migrations fail at the inbox — I make sure yours doesn't.</span><span data-lang="fr">SPF, DKIM, DMARC, réputation. La plupart des migrations échouent à la boîte de réception — pas la vôtre.</span></p>
+                    </div>
+                    <div class="bento-card rounded-xl p-5">
+                        <i class="fa-solid fa-user-tie text-accent text-lg"></i>
+                        <h4 class="font-display font-bold text-slate-100 mt-2"><span data-lang="en">Single point of accountability</span><span data-lang="fr">Un seul responsable</span></h4>
+                        <p class="text-slate-400 text-sm mt-1"><span data-lang="en">No project manager handoff, no offshore team. The engineer doing the work is the one you message at 9pm when something looks off.</span><span data-lang="fr">Pas de chef de projet intermédiaire, pas d'équipe externalisée. L'ingénieur qui fait le travail est celui que vous écrivez à 21h.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-12">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase"><span data-lang="en">FAQ</span><span data-lang="fr">FAQ</span></span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-3 tracking-tight"><span data-lang="en">Common questions, straight answers</span><span data-lang="fr">Questions fréquentes, réponses directes</span></h2>
+            </div>
+            <div class="space-y-3 reveal">
+                <details class="faq-item">
+                    <summary><span data-lang="en">Is my contact data safe during migration?</span><span data-lang="fr">Mes données contacts sont-elles en sécurité ?</span></summary>
+                    <div class="faq-body"><span data-lang="en">Yes. Day 1 starts with a full WPVivid backup of your WordPress and a clean export of your source CRM held locally and encrypted at rest. Your source CRM stays live and untouched until cutover on Day 20 — if anything goes sideways, we revert in minutes. I never delete data; I copy it.</span><span data-lang="fr">Oui. Le Jour 1 commence par une sauvegarde WPVivid complète et un export propre du CRM source, conservé localement et chiffré. Votre CRM source reste actif et intact jusqu'au Jour 20 — en cas de souci, retour arrière en minutes. Je ne supprime jamais de données ; je les copie.</span></div>
+                </details>
+                <details class="faq-item">
+                    <summary><span data-lang="en">How much downtime should I expect?</span><span data-lang="fr">Quel temps d'arrêt prévoir ?</span></summary>
+                    <div class="faq-body"><span data-lang="en">For your end users, zero. We work in parallel: FluentCRM is built on a staging or shadow environment while your old CRM keeps running. The cutover on Day 20 is a webhook flip — typically under 15 minutes of partial dual-write. Your customers don't notice anything.</span><span data-lang="fr">Pour vos utilisateurs finaux, zéro. Nous travaillons en parallèle : FluentCRM est construit en staging pendant que l'ancien CRM continue. La bascule du Jour 20 est un changement de webhook — typiquement moins de 15 minutes de double écriture. Aucun impact visible.</span></div>
+                </details>
+                <details class="faq-item">
+                    <summary><span data-lang="en">Will I lose any automations or segmentation logic?</span><span data-lang="fr">Vais-je perdre des automatisations ou logique de segmentation ?</span></summary>
+                    <div class="faq-body"><span data-lang="en">No. Every automation is captured as a written spec on Day 3, rebuilt in FluentCRM Day 11–16, and parity-tested with a dummy contact. You sign off on each one before it goes live. If FluentCRM lacks a feature your automation depends on, I tell you in Day 2 — not Day 18.</span><span data-lang="fr">Non. Chaque automatisation est capturée en spec écrite au Jour 3, reconstruite Jours 11–16, et testée avec un contact factice. Vous validez chacune avant la mise en production. Si FluentCRM manque une fonctionnalité critique, je vous le dis au Jour 2 — pas au Jour 18.</span></div>
+                </details>
+                <details class="faq-item">
+                    <summary><span data-lang="en">Do I own the FluentCRM Pro license, or do you?</span><span data-lang="fr">À qui appartient la licence FluentCRM Pro ?</span></summary>
+                    <div class="faq-body"><span data-lang="en">You own it. The license is purchased and registered to your account on Day 5. You hold the API key, you control renewals, you can move it to a different host whenever you want. There is no vendor lock-in to me — that's the whole point.</span><span data-lang="fr">À vous. La licence est achetée et enregistrée à votre compte au Jour 5. Vous détenez la clé API, contrôlez les renouvellements, pouvez la déplacer chez un autre hébergeur. Pas de dépendance à moi — c'est tout l'intérêt.</span></div>
+                </details>
+                <details class="faq-item">
+                    <summary><span data-lang="en">What's the refund policy if it can't be done?</span><span data-lang="fr">Quelle politique de remboursement si la migration est impossible ?</span></summary>
+                    <div class="faq-body"><span data-lang="en">If the Day 1–2 audit reveals the migration is beyond my scope (proprietary features, exotic source system, fundamentally incompatible logic), you get a full refund — no questions asked. After audit sign-off and the source-export step, I'm committed to delivering. Anything you flag during the support window is on me, not billed.</span><span data-lang="fr">Si l'audit Jours 1–2 révèle que la migration dépasse mon scope (fonctionnalités propriétaires, système source exotique, logique fondamentalement incompatible), remboursement intégral — sans question. Après validation de l'audit et étape d'export, je m'engage à livrer. Tout problème signalé pendant la fenêtre de support est à ma charge, sans facturation.</span></div>
+                </details>
+                <details class="faq-item">
+                    <summary><span data-lang="en">What about email deliverability after we switch IPs/domains?</span><span data-lang="fr">Et la délivrabilité après changement d'IP/domaine ?</span></summary>
+                    <div class="faq-body"><span data-lang="en">Deliverability is the most-skipped step in DIY migrations and the #1 reason they go sideways. I configure SPF, DKIM, DMARC on Day 5, warm the sending domain across Days 5–19, and run a seed-list test (Gmail, Outlook, Yahoo) on Day 19. We only flip the cutover after inbox placement is confirmed. If you want to keep your current SMTP provider (Amazon SES, SendGrid, Postmark, etc.), we wire it through.</span><span data-lang="fr">La délivrabilité est l'étape la plus négligée en DIY et la raison #1 d'échec. Je configure SPF, DKIM, DMARC au Jour 5, préchauffe le domaine d'envoi Jours 5–19, et lance un test seed-list (Gmail, Outlook, Yahoo) au Jour 19. La bascule n'a lieu qu'après confirmation du placement boîte de réception. Si vous voulez garder votre SMTP (Amazon SES, SendGrid, Postmark), je le branche.</span></div>
+                </details>
+                <details class="faq-item">
+                    <summary><span data-lang="en">What if I need a feature that's only in the higher tier?</span><span data-lang="fr">Et si j'ai besoin d'une fonctionnalité seulement dans un tier supérieur ?</span></summary>
+                    <div class="faq-body"><span data-lang="en">Tier upgrades are pro-rated. If we start on Starter and you need a 5th integration mid-project, I quote the delta and we keep going. I never bill surprises — every change order is approved by you in writing first.</span><span data-lang="fr">Les passages à un tier supérieur sont au prorata. Si on commence en Starter et qu'une 5ème intégration devient nécessaire, je quote le delta et on continue. Pas de surprise sur la facture — chaque avenant est validé par écrit.</span></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== FINAL CTA BAND ===== -->
+    <section id="final-cta" class="relative py-20 sm:py-28">
+        <div class="section-line max-w-7xl mx-auto mb-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal relative bento-card rounded-3xl p-8 sm:p-12 lg:p-16 overflow-hidden text-center">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
+                </div>
+                <div class="relative space-y-8 max-w-2xl mx-auto">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
+                        <span class="relative flex h-2 w-2">
+                            <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                        </span>
+                        <span class="font-mono text-accent text-xs font-medium"><span data-lang="en">Currently booking migrations</span><span data-lang="fr">Migrations ouvertes</span></span>
+                    </div>
+                    <div data-lang="en">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Stop paying for the wrong CRM.<br><span class="text-gradient">Start in 21 days.</span></h2>
+                    </div>
+                    <div data-lang="fr">
+                        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-slate-100 leading-tight tracking-tight">Arrêtez de payer le mauvais CRM.<br><span class="text-gradient">Commencez en 21 jours.</span></h2>
+                    </div>
+                    <p class="text-slate-400 text-lg leading-relaxed"><span data-lang="en">Send the form for a structured quote, or message on WhatsApp for an immediate scoping conversation.</span><span data-lang="fr">Envoyez le formulaire pour un devis structuré, ou écrivez sur WhatsApp pour cadrer immédiatement.</span></p>
+                    <div class="flex flex-wrap justify-center gap-4 pt-2">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8bSBRHmSHbgyo_nnlhqsJAgUkRwTSyS-QC83OL_RX2-ZR8g/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-accent hover:bg-accent-light text-slate-950 font-display font-bold text-base transition-all hover:shadow-lg hover:shadow-accent/20">
+                            <i class="fa-solid fa-file-invoice text-sm"></i>
+                            <span data-lang="en">Request a Quote</span><span data-lang="fr">Demander un Devis</span>
+                        </a>
+                        <a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl border-2 border-accent/40 hover:border-accent/70 text-accent-light hover:text-accent-light font-display font-bold text-base transition-all hover:bg-accent/5">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                    <div>
+                        <a href="../free-deliverability-audit/index.html" class="btn-tertiary">
+                            <i class="fa-solid fa-envelope-circle-check text-xs"></i>
+                            Auditez gratuitement votre délivrabilité
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                    <p class="font-mono text-xs text-slate-500 pt-4">
+                        <i class="fa-solid fa-shield-halved mr-1"></i>
+                        Remboursement à l'étape audit · Plan de rollback dès Jour 1 · Vous possédez tout
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER:START -->
+<footer class="border-t border-slate-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <span class="font-mono text-accent font-bold text-xs">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-semibold text-sm text-slate-400">OL<span class="text-accent">DEV</span></span>
+                <span class="hidden md:inline font-mono text-xs text-slate-600">· Ingénieur Systèmes WordPress</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/lotfi-otmanine/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Profil LinkedIn"><i class="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i></a>
+                <a href="https://github.com/Lotmanine" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Profil GitHub"><i class="fa-brands fa-github text-lg" aria-hidden="true"></i></a>
+                <a href="https://www.upwork.com/freelancers/~01bd748fcb665b90ca" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Profil Upwork"><i class="fa-solid fa-arrow-up-right-from-square text-lg" aria-hidden="true"></i></a>
+            </div>
+            <p class="font-mono text-xs text-slate-600">&copy; 2026 OLDEV · Construit avec précision.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Discuter sur WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-float-label">Discuter sur WhatsApp</span>
+</a>
+<!-- FOOTER:END -->
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/lead-magnet.js"></script>
+</body>
+</html>

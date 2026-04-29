@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Email Deliverability Audit — SPF, DKIM, DMARC &amp; Blacklist Report</title>
+    <meta name="description" content="Free PDF deliverability audit for your domain — SPF, DKIM, DMARC, blacklists, IP reputation, MX, BIMI, MTA-STS. Delivered within 24 hours. No obligation.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="index.html">
+    <link rel="alternate" hreflang="en" href="index.html">
+    <link rel="alternate" hreflang="fr" href="../fr/free-deliverability-audit/index.html">
+    <link rel="alternate" hreflang="x-default" href="index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Email Deliverability Audit — SPF, DKIM, DMARC + Blacklists">
+    <meta property="og:description" content="Free PDF report on your domain's deliverability — SPF, DKIM, DMARC, blacklists, sender reputation, MX, BIMI, MTA-STS. Delivered within 24 hours.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:url" content="index.html">
+    <meta property="og:image" content="../images/og-deliverability-audit.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Email Deliverability Audit">
+    <meta name="twitter:description" content="SPF, DKIM, DMARC, blacklists, reputation — full PDF report in 24h.">
+    <meta name="twitter:image" content="../images/og-deliverability-audit.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 950: '#020617', 925: '#0a0f1e', 900: '#0f172a', 850: '#131b2e', 800: '#1e293b', 700: '#334155', 600: '#475569', 500: '#64748b', 400: '#94a3b8', 300: '#cbd5e1', 200: '#e2e8f0', 100: '#f1f5f9' },
+                        accent: { DEFAULT: '#10b981', light: '#34d399', dark: '#059669', glow: 'rgba(16, 185, 129, 0.15)' },
+                    },
+                    fontFamily: { display: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "index.html#webpage",
+                "name": "Free Email Deliverability Audit",
+                "description": "Free PDF deliverability audit for your domain — SPF, DKIM, DMARC, blacklists, IP reputation. Delivered within 24 hours.",
+                "inLanguage": "en",
+                "isPartOf": { "@type": "WebSite", "name": "OLDEV", "url": "../index.html" }
+            },
+            {
+                "@type": "Service",
+                "name": "Free Email Deliverability Audit",
+                "serviceType": "Email deliverability audit",
+                "provider": { "@type": "Person", "name": "Lotfi (OLDEV)" },
+                "areaServed": "Worldwide",
+                "description": "PDF report covering SPF, DKIM, DMARC, MX, blacklists, sender reputation, BIMI and MTA-STS for a single domain.",
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is the audit really free?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. There is no fee, no payment information collected, and no obligation to buy anything afterward. The report is generated once per domain per requester to keep things sustainable on my side." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How is my email used?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Only to send you the PDF report. Your address is not added to any newsletter, sold, or shared with third parties. If you want a follow-up conversation, you reach out — not the other way around." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does the audit take?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Most reports are delivered within 12 hours; the published SLA is 24 hours so I have buffer for batches and complex domains. You will receive an email when the PDF is ready, with the report attached." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I have to pay you to fix the issues?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "No. The report includes plain-language remediation steps that a competent admin can apply themselves. If you want me to implement the fixes, that is a paid engagement, but the report stands on its own." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the difference between SPF, DKIM, and DMARC?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "SPF tells receiving servers which IPs are allowed to send for your domain. DKIM cryptographically signs each message so receivers can confirm it was not modified in transit. DMARC tells receivers what to do when SPF or DKIM fail and where to send aggregate reports. The three work together; none of them alone stops all spoofing." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How often should I audit deliverability?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "After any significant change — new ESP, new sending IP, domain handover, or new high-volume campaign — and at least once per year. Reputation drifts, DNS records get edited by mistake, and blacklists change their criteria over time." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What if my domain doesn't send email yet?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Auditing a not-yet-sending domain is actually the best moment — you get a clean baseline and a checklist before warm-up. The report flags what to set up before your first send." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What about shared sending domains (Gmail, Outlook 365)?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "If you only send through a shared provider's domain (e.g. you@gmail.com), there is no DNS to audit on your side. The report would focus on whether your custom domain (if any) is properly aligned for transactional or marketing email." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you handle blacklist delisting?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "The report identifies which lists you appear on and links to each list's delisting form. Most major lists accept self-service delisting once the underlying issue is fixed. Stubborn cases (Spamhaus, repeat offenders) can take a paid engagement to resolve." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you need access to my DNS or email account?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "No. The audit only uses publicly visible DNS records and public reputation data. You do not give me any credentials, and I cannot read your email." }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="grid-bg">
+    <!-- HEADER:START -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-slate-950/70 border-b border-slate-800/50 transition-all duration-300" aria-label="Primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-18">
+            <a href="../index.html" class="flex items-center gap-3 group" aria-label="OLDEV — home">
+                <div class="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <span class="font-mono text-accent font-bold text-sm">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-bold text-lg text-slate-100 tracking-tight">OL<span class="text-accent">DEV</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="../index.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">WordPress Engineering</a>
+                <a href="../crm-migration-service/index.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">CRM Migration</a>
+                <a href="../contact.html" class="nav-link text-sm text-slate-400 hover:text-accent transition-colors font-medium">Contact</a>
+                <a href="../free-deliverability-audit/index.html" class="nav-cta active ">Free Audit</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/5 border border-accent/20">
+                    <span class="relative flex h-2 w-2">
+                        <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    <span class="text-xs font-mono text-accent font-medium">Available</span>
+                </div>
+                <a href="../fr/free-deliverability-audit/index.html" hreflang="fr" aria-label="Switch to French" class="lang-switch font-mono text-xs font-medium text-slate-400 hover:text-accent transition-colors px-2.5 py-1.5 rounded-md border border-slate-700/50 hover:border-accent/30">FR</a>
+                <button id="mobile-toggle" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-accent hover:border-accent/30 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/50 bg-slate-950/95">
+        <div class="px-4 py-4 space-y-1">
+            <a href="../index.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">WordPress Engineering</a>
+            <a href="../crm-migration-service/index.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">CRM Migration</a>
+            <a href="../contact.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-accent hover:bg-accent/5 transition-colors font-medium">Contact</a>
+            <a href="../free-deliverability-audit/index.html" class="mobile-nav-cta active block px-3 py-2.5 rounded-lg text-sm font-display font-semibold transition-colors">Free Audit</a>
+            <div class="pt-2 flex items-center gap-2 px-3 py-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="status-dot absolute inline-flex h-full w-full rounded-full bg-accent"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span class="text-xs font-mono text-accent font-medium">Available</span>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- HEADER:END -->
+
+    <main id="main-content">
+
+    <!-- ===== HERO + FORM 1 ===== -->
+    <section id="hero" class="relative pt-32 pb-12 sm:pt-36 sm:pb-16 overflow-hidden">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center relative">
+            <div class="lg:col-span-6 space-y-6">
+                <div class="reveal inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent/10 border border-accent/20">
+                    <i class="fa-solid fa-envelope-circle-check text-accent text-xs" aria-hidden="true"></i>
+                    <span class="font-mono text-accent text-xs font-medium">Free PDF Report · 24h Delivery</span>
+                </div>
+                <h1 class="reveal font-display font-900 text-4xl sm:text-5xl lg:text-6xl text-slate-100 leading-[1.05] tracking-tight" style="transition-delay: 0.1s;">
+                    Free Email Deliverability Audit<br>
+                    <span class="text-gradient">SPF · DKIM · DMARC · Blacklists</span>
+                </h1>
+                <p class="reveal text-lg text-slate-400 leading-relaxed max-w-xl" style="transition-delay: 0.2s;">
+                    Drop your domain — you'll receive a full deliverability PDF (DNS records, blacklist status, sender reputation, plain-language fixes) within 24 hours. No obligation, no upsell.
+                </p>
+                <ul class="reveal space-y-2 text-slate-400 text-sm" style="transition-delay: 0.3s;">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1.5" aria-hidden="true"></i><span>SPF / DKIM / DMARC validation with alignment + lookup-count check</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1.5" aria-hidden="true"></i><span>Major blacklist scan: Spamhaus, Barracuda, Sorbs, SURBL, Invaluement</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1.5" aria-hidden="true"></i><span>Sender-reputation review (Postmaster, SNDS) + MX / reverse-DNS / BIMI / MTA-STS</span></li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent text-xs mt-1.5" aria-hidden="true"></i><span>Plain-language remediation steps you can apply without me</span></li>
+                </ul>
+            </div>
+            <div class="lg:col-span-6 reveal" style="transition-delay: 0.25s;">
+                <div class="lead-magnet">
+                    <form class="lead-magnet-form" data-source="audit-page" novalidate>
+                        <div class="lm-row lm-row-2">
+                            <div>
+                                <label for="lm-email-audit-1">Email<span class="lm-required" aria-hidden="true">*</span></label>
+                                <input type="email" id="lm-email-audit-1" name="email" required autocomplete="email" placeholder="you@company.com" aria-describedby="lm-email-audit-1-err">
+                                <div class="lm-error" id="lm-email-audit-1-err" data-error-for="email" role="alert" aria-live="polite"></div>
+                            </div>
+                            <div>
+                                <label for="lm-domain-audit-1">Domain to audit<span class="lm-required" aria-hidden="true">*</span></label>
+                                <input type="text" id="lm-domain-audit-1" name="domain" required autocomplete="off" placeholder="example.com" aria-describedby="lm-domain-audit-1-err">
+                                <div class="lm-error" id="lm-domain-audit-1-err" data-error-for="domain" role="alert" aria-live="polite"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="lm-name-audit-1">Name <span class="text-slate-600 normal-case">(optional)</span></label>
+                            <input type="text" id="lm-name-audit-1" name="name" autocomplete="name" placeholder="Jane Doe">
+                        </div>
+                        <div class="lm-honeypot" aria-hidden="true">
+                            <label for="lm-company-website-audit-1">Company website (leave blank)</label>
+                            <input type="text" id="lm-company-website-audit-1" name="company_website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <div class="lm-form-error" role="alert" aria-live="assertive" hidden></div>
+                        <button type="submit">
+                            <i class="fa-solid fa-paper-plane text-xs" aria-hidden="true"></i>
+                            Get my free audit
+                        </button>
+                        <p class="lm-microcopy">
+                            <i class="fa-solid fa-shield-halved mr-1" aria-hidden="true"></i>
+                            Report delivered within 24 hours. We don't spam — your email is only used to send the report.
+                        </p>
+                    </form>
+                    <div class="lead-magnet-success" hidden>
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        <div>
+                            <strong>Got it — your audit is on its way.</strong>
+                            Check your inbox in the next 24 hours. If you don't see it, peek in spam and add my address to your contacts.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== SECTION 2: WHAT YOU'LL GET ===== -->
+    <section id="what-you-get" class="relative py-20 sm:py-24">
+        <div class="section-line max-w-7xl mx-auto mb-16"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-12">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase">What's in the report</span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl text-slate-100 mt-3 tracking-tight">Every check, every layer</h2>
+                <p class="text-slate-400 mt-3 max-w-2xl mx-auto">A full inventory of what receivers see when your domain sends mail — written so a non-specialist can act on it.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">SPF</h3><p class="text-slate-400 text-sm mt-1">Record syntax, lookup-count budget (10-DNS-lookup limit), `+all` / `~all` / `-all` policy review, alignment with the From header.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-key" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">DKIM</h3><p class="text-slate-400 text-sm mt-1">Selector discovery, key length (RSA 1024 vs 2048), key rotation status, signature alignment with the visible sender domain.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-gavel" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">DMARC</h3><p class="text-slate-400 text-sm mt-1">Policy (none / quarantine / reject), percentage rollout, aggregate (`rua`) and forensic (`ruf`) reporting destinations, subdomain policy.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-ban" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">Blacklists</h3><p class="text-slate-400 text-sm mt-1">Spamhaus (SBL, XBL, PBL, DBL, ZEN), Barracuda, Sorbs, SURBL, Invaluement — domain &amp; sending-IP coverage with delisting links.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">Sender reputation</h3><p class="text-slate-400 text-sm mt-1">Google Postmaster signals (where verifiable), Microsoft SNDS readiness, common reputation flags. No invented "sender score" — only what receivers actually publish.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">MX &amp; reverse DNS</h3><p class="text-slate-400 text-sm mt-1">MX record health, PTR record matching the HELO string, common misconfigurations that quietly drop legitimate mail.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">BIMI</h3><p class="text-slate-400 text-sm mt-1">Whether your DMARC posture is strong enough to qualify for BIMI, VMC requirements, and what your logo would need to look like.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">MTA-STS &amp; TLS-RPT</h3><p class="text-slate-400 text-sm mt-1">In-transit encryption posture, MTA-STS policy file, TLS-RPT reporting endpoint configuration.</p></div>
+                <div class="reveal check-card"><div class="check-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></div><h3 class="font-display font-bold text-slate-100">Plain-language fixes</h3><p class="text-slate-400 text-sm mt-1">Each finding ranked by impact (high / medium / low) with a concrete remediation step a competent admin can apply without further consulting.</p></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== SECTION 3: WHY THIS MATTERS ===== -->
+    <section class="relative py-20 sm:py-24">
+        <div class="section-line max-w-7xl mx-auto mb-16"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-10">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase">Why this matters</span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl text-slate-100 mt-3 tracking-tight">The cost of poor deliverability is silent</h2>
+            </div>
+            <div class="reveal space-y-4 text-slate-400 leading-relaxed">
+                <p>If even a quiet share of your transactional and marketing email lands in spam, the impact is rarely visible in your stats — bounces stay low, the dashboard stays green — but customers stop replying, password-reset emails get blamed on "the system", and onboarding sequences silently underperform.</p>
+                <p>Most fixes are configuration-only: a corrected SPF record, a properly aligned DKIM signature, a DMARC policy that reports rather than rejects until you trust the data. None of them require new infrastructure or vendor change. They just require knowing what to look at and in what order.</p>
+                <p>That's the audit. A flat, opinionated read of your domain's current state, ranked by what to fix first.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== SECTION 4: HOW IT WORKS ===== -->
+    <section id="how" class="relative py-20 sm:py-24">
+        <div class="section-line max-w-7xl mx-auto mb-16"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-12">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase">How it works</span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl text-slate-100 mt-3 tracking-tight">Three steps, one PDF</h2>
+            </div>
+            <ol class="grid sm:grid-cols-3 gap-5">
+                <li class="reveal process-step"><span class="step-num">01</span><h3 class="font-display font-bold text-slate-100 mt-2">Enter your domain</h3><p class="text-slate-400 text-sm mt-1.5">Email + domain (no protocol, no path — just <span class="font-mono text-slate-300">example.com</span>). Optional name. That's the entire form.</p></li>
+                <li class="reveal process-step" style="transition-delay: 0.08s;"><span class="step-num">02</span><h3 class="font-display font-bold text-slate-100 mt-2">Automated audit runs</h3><p class="text-slate-400 text-sm mt-1.5">Public DNS records and blacklist registries are queried; the script compiles findings, ranks them by impact, and writes the PDF.</p></li>
+                <li class="reveal process-step" style="transition-delay: 0.16s;"><span class="step-num">03</span><h3 class="font-display font-bold text-slate-100 mt-2">PDF in your inbox</h3><p class="text-slate-400 text-sm mt-1.5">Within 24 hours. If it doesn't show up, peek in spam (a small irony when auditing deliverability) and add the sender to your contacts.</p></li>
+            </ol>
+        </div>
+    </section>
+
+
+   
+
+
+
+    <!-- ===== SECTION 7: FAQ ===== -->
+    <section id="faq" class="relative py-20 sm:py-24">
+        <div class="section-line max-w-7xl mx-auto mb-16"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal text-center mb-10">
+                <span class="font-mono text-accent text-xs font-medium tracking-wider uppercase">FAQ</span>
+                <h2 class="font-display font-800 text-3xl sm:text-4xl text-slate-100 mt-3 tracking-tight">Common questions</h2>
+            </div>
+            <div class="space-y-3 reveal">
+                <details class="faq-item"><summary>Is the audit really free?</summary><div class="faq-body">Yes. There is no fee, no payment information collected, and no obligation to buy anything afterward. The report is generated once per domain per requester to keep things sustainable on my side.</div></details>
+                <details class="faq-item"><summary>How long does the audit take?</summary><div class="faq-body">Most reports are delivered within 12 hours; the published SLA is 24 hours so I have buffer for batches and complex domains. You will receive an email when the PDF is ready, with the report attached.</div></details>
+                <details class="faq-item"><summary>Do I have to pay you to fix the issues?</summary><div class="faq-body">No. The report includes plain-language remediation steps that a competent admin can apply themselves. If you want me to implement the fixes, that is a paid engagement, but the report stands on its own.</div></details>
+                <details class="faq-item"><summary>What is the difference between SPF, DKIM, and DMARC?</summary><div class="faq-body">SPF tells receiving servers which IPs are allowed to send for your domain. DKIM cryptographically signs each message so receivers can confirm it was not modified in transit. DMARC tells receivers what to do when SPF or DKIM fail and where to send aggregate reports. The three work together; none of them alone stops all spoofing.</div></details>
+                <details class="faq-item"><summary>How often should I audit deliverability?</summary><div class="faq-body">After any significant change — new ESP, new sending IP, domain handover, or new high-volume campaign — and at least once per year. Reputation drifts, DNS records get edited by mistake, and blacklists change their criteria over time.</div></details>
+                <details class="faq-item"><summary>What if my domain doesn't send email yet?</summary><div class="faq-body">Auditing a not-yet-sending domain is actually the best moment — you get a clean baseline and a checklist before warm-up. The report flags what to set up before your first send.</div></details>
+                <details class="faq-item"><summary>What about shared sending domains (Gmail, Outlook 365)?</summary><div class="faq-body">If you only send through a shared provider's domain (e.g. you@gmail.com), there is no DNS to audit on your side. The report would focus on whether your custom domain (if any) is properly aligned for transactional or marketing email.</div></details>
+                <details class="faq-item"><summary>Do you handle blacklist delisting?</summary><div class="faq-body">The report identifies which lists you appear on and links to each list's delisting form. Most major lists accept self-service delisting once the underlying issue is fixed. Stubborn cases (Spamhaus, repeat offenders) can take a paid engagement to resolve.</div></details>
+                <details class="faq-item"><summary>Do you need access to my DNS or email account?</summary><div class="faq-body">No. The audit only uses publicly visible DNS records and public reputation data. You do not give me any credentials, and I cannot read your email.</div></details>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    </main>
+
+    <!-- FOOTER:START -->
+<footer class="border-t border-slate-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <span class="font-mono text-accent font-bold text-xs">&lt;/&gt;</span>
+                </div>
+                <span class="font-display font-semibold text-sm text-slate-400">OL<span class="text-accent">DEV</span></span>
+                <span class="hidden md:inline font-mono text-xs text-slate-600">· WordPress Systems Engineer</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://www.linkedin.com/in/lotfi-otmanine/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in text-lg" aria-hidden="true"></i></a>
+                <a href="https://github.com/Lotmanine" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="GitHub profile"><i class="fa-brands fa-github text-lg" aria-hidden="true"></i></a>
+                <a href="https://www.upwork.com/freelancers/~01bd748fcb665b90ca" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-accent transition-colors" aria-label="Upwork profile"><i class="fa-solid fa-arrow-up-right-from-square text-lg" aria-hidden="true"></i></a>
+            </div>
+            <p class="font-mono text-xs text-slate-600">&copy; 2026 OLDEV · Built with precision.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.link/u2fc8x" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-float-label">Chat on WhatsApp</span>
+</a>
+<!-- FOOTER:END -->
+
+    <script src="../js/main.js"></script>
+    <script src="../js/lead-magnet.js"></script>
+</body>
+</html>
