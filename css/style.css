@@ -767,6 +767,15 @@ body::before {
 .lead-magnet-form .lm-consent a:hover {
     color: #10b981;
 }
+.lead-magnet-form .lm-handled-link {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    text-align: center;
+    line-height: 1.55;
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(30, 41, 59, 0.6);
+}
 .lead-magnet-form .lm-form-error {
     color: #f87171;
     font-size: 0.85rem;

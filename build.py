@@ -38,11 +38,13 @@ PAGES: dict[str, tuple[str, str]] = {
     "crm-migration-service/index.html":            ("crm",     "en"),
     "contact.html":                                ("contact", "en"),
     "free-deliverability-audit/index.html":        ("audit",   "en"),
+    "privacy/index.html":                          ("privacy", "en"),
     "404.html":                                    ("notfound","en"),
     "fr/index.html":                               ("home",    "fr"),
     "fr/crm-migration-service/index.html":         ("crm",     "fr"),
     "fr/contact.html":                             ("contact", "fr"),
     "fr/free-deliverability-audit/index.html":     ("audit",   "fr"),
+    "fr/privacy/index.html":                       ("privacy", "fr"),
     "fr/404.html":                                 ("notfound","fr"),
 }
 
@@ -65,15 +67,18 @@ ACTIVE_TOKEN_BY_PAGE = {
 ALL_ACTIVE_TOKENS = list(ACTIVE_TOKEN_BY_PAGE.values())
 
 
-def doc_relative_root(page_path: str) -> str:
-    """Return the document-relative path back to site root for a given page.
+def doc_relative_root(page_path: str, locale: str) -> str:
+    """Return the document-relative path back to the LOCALE root for a given page.
 
-    `page_path` is a POSIX-style path relative to site root, e.g.
-    "fr/crm-migration-service/index.html". Depth is the number of directory
-    segments preceding the file name.
+    FR pages live under fr/, so depth-from-locale-root = depth - 1.
+    EN pages live at site root, so depth-from-locale-root = depth.
+
+    This ensures FR nav links resolve to /fr/... not / (the EN tree).
     """
     depth = page_path.count("/")
-    return "../" * depth if depth else "./"
+    if locale == "fr":
+        depth -= 1
+    return "../" * depth if depth > 0 else "./"
 
 
 def alt_locale_href(page_id: str, current_locale: str) -> str:
@@ -86,6 +91,7 @@ def alt_locale_href(page_id: str, current_locale: str) -> str:
         "crm":      "crm-migration-service/index.html",
         "contact":  "contact.html",
         "audit":    "free-deliverability-audit/index.html",
+        "privacy":  "privacy/index.html",
         "notfound": "404.html",
     }
     # Page-id -> clean URL relative to language root (no .html, no index.html)
@@ -94,6 +100,7 @@ def alt_locale_href(page_id: str, current_locale: str) -> str:
         "crm":      "crm-migration-service/",
         "contact":  "contact",
         "audit":    "free-deliverability-audit/",
+        "privacy":  "privacy/",
         "notfound": "404",
     }
     disk_path = en_disk[page_id]
@@ -149,7 +156,7 @@ def render_partial(
 ) -> str:
     """Render a partial (header or footer) for a given page."""
     out = partial_text
-    out = out.replace("{{ROOT}}", doc_relative_root(page_path))
+    out = out.replace("{{ROOT}}", doc_relative_root(page_path, locale))
     out = out.replace("{{LOCALE}}", locale)
     out = out.replace("{{LANG_ALT_HREF}}", alt_locale_href(page_id, locale))
     # Active-state tokens: matching one becomes ACTIVE_SNIPPET, others empty.

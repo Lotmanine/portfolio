@@ -1,13 +1,13 @@
-# OLDEV — Apache rewrite rules for clean URLs
+# OLDEV, Apache rewrite rules for clean URLs
 RewriteEngine On
-# RewriteBase intentionally omitted — Apache infers the per-directory base
+# RewriteBase intentionally omitted, Apache infers the per-directory base
 # from where this .htaccess lives. Works for both root and subfolder installs.
 
-# 1. Force HTTPS (production only — uncomment when deploying)
-# RewriteCond %{HTTPS} !=on
-# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# 1. Force HTTPS (production)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 2. Strip trailing index.html → 301 to folder URL
+# 2. Strip trailing index.html, 301 to folder URL
 RewriteCond %{THE_REQUEST} \s/+(.*?)/index\.html[\s?] [NC]
 RewriteRule ^ /%1/ [R=301,L]
 

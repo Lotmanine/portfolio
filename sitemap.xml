@@ -57,4 +57,18 @@
         <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/free-deliverability-audit/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/free-deliverability-audit/"/>
     </url>
+    <url>
+        <loc>https://oldev.site/privacy/</loc>
+        <lastmod>2026-05-01</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/privacy/"/>
+    </url>
+    <url>
+        <loc>https://oldev.site/fr/privacy/</loc>
+        <lastmod>2026-05-01</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://oldev.site/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://oldev.site/fr/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://oldev.site/privacy/"/>
+    </url>
 </urlset>
